@@ -11310,6 +11310,23 @@ input[type=button]::focus {
   background: #3b5998;
 }
 
+.m-btn[btn-type=twitter],
+.m-btnS[btn-type=twitter],
+.m-btnM[btn-type=twitter],
+.m-btnL[btn-type=twitter] {
+  border-color: #1da1f2;
+  color: #fff;
+  background: #1da1f2;
+}
+
+.m-btn[btn-type=twitter]:hover,
+.m-btnS[btn-type=twitter]:hover,
+.m-btnM[btn-type=twitter]:hover,
+.m-btnL[btn-type=twitter]:hover {
+  border-color: #1da1f2;
+  background: #1da1f2;
+}
+
 .m-btn[btn-type=search-suggest],
 .m-btn[btn-type=search-obsessed],
 .m-btnS[btn-type=search-suggest],
@@ -11580,6 +11597,12 @@ a.m-btn {
 .fa-wink::before {
   font-family: "Font Awesome 5 Free";
   content: "\F4DA";
+  font-weight: 600;
+}
+
+.fa-twitter::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\F099";
   font-weight: 600;
 }
 

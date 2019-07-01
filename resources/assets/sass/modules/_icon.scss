@@ -171,4 +171,12 @@
       font-weight: 600;
     }
   }
+
+  &-twitter {
+    &::before {
+      font-family: $_fontawesome-brand;
+      content: $_fa-twitter;
+      font-weight: 600;
+    }
+  }
 }

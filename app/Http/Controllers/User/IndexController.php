@@ -20,15 +20,14 @@ class IndexController extends Controller
 
     public function index()
     {
-        $restaurant = null;
-        $recommendRestaurants = $this->restaurantRepository->getRecommendRestaurants($restaurant);
-        $recommendRestaurants->load('category', 'restaurantImages.image');
+        // $restaurant = null;
+        // $recommendRestaurants = $this->restaurantRepository->getRecommendRestaurants($restaurant);
+        // $recommendRestaurants->load('category', 'restaurantImages.image');
 
         \SeoHelper::setIndexSeo();
 
         return view('pages.index',
             [
-                'recommendRestaurants' => $recommendRestaurants
             ]
         );
     }

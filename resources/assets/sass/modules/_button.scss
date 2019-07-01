@@ -69,6 +69,17 @@
     }
   }
 
+  // twitter
+  &[btn-type="twitter"] {
+    border-color: $twitter_color;
+    color: $c-white;
+    background: $twitter_color;
+    &:hover {
+      border-color: $twitter_color;
+      background: $twitter_color;
+    }
+  }
+
   &[btn-type="search-suggest"], &[btn-type="search-obsessed"] {
     color: #aaaaaa;
     background: $c-white;
