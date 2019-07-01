@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="p-user-edit">
+  <div class="p-mypage-edit">
     <div class="row mb-2">
       <div class="col-md-6">
         {{ Breadcrumbs::render('mypage.edit', $currentUser) }}
@@ -11,10 +11,8 @@
     </div>
 
     <div class="row">
-      <!-- sidebar -->
-      @include('components.user.sidebar.users.show', ['show' => true])
       <!-- content -->
-      <div class="col-md-9">
+      <div class="col-md-12">
          <!-- error message -->
           @if($errors->any())
               <div class="alert alert-danger">
@@ -31,7 +29,6 @@
               <label>お名前</label>
               <input type="text" class="form-control" name="name" value="{{ $currentUser->name }}" required>
             </div>
-
             <div class="m-frmTextbox">
               <label>メールアドレス</label>
               <input type="email" class="form-control" name="email" value="{{ $currentUser->email }}" required>
@@ -39,12 +36,12 @@
 
             <div class="m-frmTextbox">
               <label>{{ date('Y年m月', strtotime('first day of previous month')) }}の売り上げ</label>
-              <input type="number" class="form-control" name="last_mounth_sales" value="{{ $currentUser->last_mounth_sales }}" required>円
+              <input type="number" class="form-control" name="last_mounth_sales" value="{{ $currentUser->last_mounth_sales }}" required>
             </div>
 
             <div class="m-frmTextbox">
               <label>{{ date('Y年m月', strtotime('first day of previous month')) }}のPV</label>
-              <input type="number" class="form-control" name="last_mounth_pv" value="{{ $currentUser->last_mounth_pv }}" required>pv
+              <input type="number" class="form-control" name="last_mounth_pv" value="{{ $currentUser->last_mounth_pv }}" required>
             </div>
 
             <div class="m-frmTextbox">
@@ -57,8 +54,11 @@
               <input type="text" class="form-control" name="tw_url" value="{{ $currentUser->tw_url }}" required>
             </div>
 
-
-            <button type="submit" class="m-btn" btn-type="primary">修正する</button>
+            <div class="text-center">
+              <button type="submit" class="m-btn" btn-type="primary">
+                修正する
+              </button>
+            </div>
           </form>
       </div>
     </div>

@@ -36,12 +36,18 @@ Route::group(['middleware' => ['auth']], function ()
 
   // });
 
-  Route::group(['prefix' => 'mypage/', 'as' => 'mypage.'], function () {
-      Route::get('/', 'User\UserController@show')->name('show');
-      Route::get('/edit', 'User\UserController@edit')->name('edit');
-      Route::post('/update', 'User\UserController@update')->name('update');
+  // users
+  Route::group(['prefix' => 'users/', 'as' => 'users.'], function () {
+      Route::get('/{user}', 'User\UserController@show')->name('show');
+  });
 
-      Route::get('/favorited', 'User\UserController@showFavorited')->name('favorited');
+  // mypage
+  Route::group(['prefix' => 'mypage/', 'as' => 'mypage.'], function () {
+      Route::get('/', 'User\MypageController@show')->name('show');
+      Route::get('/edit', 'User\MypageController@edit')->name('edit');
+      Route::post('/update', 'User\MypageController@update')->name('update');
+
+      Route::get('/favorited', 'User\MypageController@showFavorited')->name('favorited');
 
       // Route::get('/password', 'User\UserController@editPassword')->name('edit.password');
       // Route::post('/password', 'User\UserController@updatePassword')->name('update.password');

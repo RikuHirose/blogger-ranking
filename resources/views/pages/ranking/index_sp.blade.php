@@ -2,12 +2,13 @@
 
 @section('content')
 
-  <div class="p-user-show-favorite">
+  <div class="p-res-index">
     <div class="row mb-2">
       <div class="col-md-6">
-        {{ Breadcrumbs::render('mypage.favorited', $currentUser) }}
+        {{ Breadcrumbs::render('ranking') }}
       </div>
       <div class="col-md-6"></div>
+
     </div>
 
     <div class="row">
@@ -17,10 +18,7 @@
           {{ $message }}
         @endisset
 
-        @isset($restaurants)
-          @each('components.user.restaurants.indexCard', $restaurants, 'restaurant')
-        @endisset
-
+        @include('components.user.ranking.rankingTableSp', ['users' => $subordinateUsers, 'top3Users' => $top3Users])
       </div>
     </div>
   </div>
