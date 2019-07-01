@@ -1,0 +1,40 @@
+/* ----------------------------------------------------------------------------
+ * ranking table
+ * ------------------------------------------------------------------------- */
+
+ .c-ranking-table {
+  border-collapse: collapse;
+  margin-top: 32px;
+
+  tbody tr:nth-of-type(odd) {
+    background-color: rgb(250, 251, 251);
+  }
+
+  tr {
+    height: 80px;
+    width: 100%;
+  }
+
+  td {
+    padding: 0px;
+    height: 48px;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: inherit;
+    color: rgb(22, 50, 92);
+    vertical-align: middle;
+  }
+
+  .rank{
+    width: 10%;
+  }
+  .image, .name{
+    width: 20%;
+  }
+  .info, .desc{
+    width: 25%;
+  }
+ }

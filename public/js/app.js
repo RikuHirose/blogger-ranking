@@ -1873,6 +1873,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2260,6 +2263,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -49511,6 +49521,12 @@ var render = function() {
   return _c("div", {}, [
     _c(
       "a",
+      { staticClass: "pl-3 m-header-list--link", attrs: { href: "/ranking" } },
+      [_vm._v("ランキングを見てみる")]
+    ),
+    _vm._v(" "),
+    _c(
+      "a",
       {
         staticClass: "pl-3 m-header-list--link",
         on: {
@@ -49961,6 +49977,18 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "m-modal__content" }, [
       _c("div", { staticClass: "social-content" }, [
+        _c(
+          "a",
+          {
+            staticClass: "m-btn w-100 mb-3",
+            attrs: { href: "/auth/login/facebook", "btn-type": "facebook" }
+          },
+          [
+            _c("i", { staticClass: "fa-facebook fa-fw" }),
+            _vm._v("\n        FaceBookでログインする\n      ")
+          ]
+        ),
+        _vm._v(" "),
         _c(
           "a",
           {

@@ -28,4 +28,14 @@ class UserRepository implements UserRepositoryInterface
       return $user;
     }
 
+    public function getBySales($order = "asc")
+    {
+        return $this->getBlankModel()->orderBy('last_mounth_sales', $order)->get();
+    }
+
+    public function getBySalesTop3($order = "asc")
+    {
+        return $this->getBlankModel()->orderBy('last_mounth_sales', $order)->take(3)->get();
+    }
+
 }

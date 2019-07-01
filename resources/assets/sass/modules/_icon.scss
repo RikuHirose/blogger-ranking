@@ -179,4 +179,29 @@
       font-weight: 600;
     }
   }
+
+  &-facebook {
+    &::before {
+      font-family: $_fontawesome-brand;
+      content: $_fa-facebook;
+      font-weight: 600;
+    }
+  }
+
+  &-crown {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-crown;
+      font-weight: 600;
+    }
+    &[ranking="1"] {
+      color: #FFED55;
+    }
+    &[ranking="2"] {
+      color: #C8C8C8;
+    }
+    &[ranking="3"] {
+      color: #E4B18D;
+    }
+  }
 }

@@ -6,7 +6,7 @@
     <div class="p-index__image">
       <p class="p-index--copy">デートにピッタリなお店を見つけよう</p>
       <div class="p-index__search-form">
-
+        <button class="m-btn">いますぐランキングを見る</button>
       </div>
     </div>
     <!-- p-index--point -->
@@ -71,8 +71,25 @@
       </div>
     </section>
 
-   
-
+    <!-- p-index--top3-blogger -->
+    <section class="p-index__top3-blogger">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+              <div class="text-center">
+                  <h2 class="">
+                      {{ Config::get('app.name') }}とは
+                  </h2>
+              </div>
+              <p class="text-center h2-desc">デートにピッタリなお店がすぐ見つかるサービスです</p>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="col-md-12">
+          @include('components.user.ranking.top3', ['users' => $top3Users])
+        </div>
+      </div>
+    </section>
      <!-- p-index--message -->
     <section class="p-index__message">
           <div class="container">

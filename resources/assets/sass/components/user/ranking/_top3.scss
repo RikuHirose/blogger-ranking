@@ -1,0 +1,49 @@
+/* ----------------------------------------------------------------------------
+ * ranking top3
+ * ------------------------------------------------------------------------- */
+
+ .c-ranking-top3 {
+  align-items: center;
+  margin-bottom: 16px;
+
+  .user-box {
+    text-align: center;
+    position: relative;
+
+    img {
+      z-index: 2;
+    }
+
+    .fa-crown {
+      z-index: 3;
+      display: block;
+      position: absolute;
+      top: 111px;
+      right: 138px;
+
+      &[ranking="1"] {
+        font-size: 32px;
+        top: 161px;
+      }
+      &[ranking="2"] {
+        font-size: 32px;
+      }
+      &[ranking="3"] {
+        font-size: 32px;
+      }
+    }
+
+    &__info {
+      margin-top: 4px;
+      &__name {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      &__desc {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+      }
+    }
+  }
+ }

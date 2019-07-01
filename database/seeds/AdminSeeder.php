@@ -86,6 +86,12 @@ class AdminSeeder extends Seeder
           'icon'      => 'fa-bars',
           'uri'       => 'users',
         ],
+        [
+          'parent_id' => 8,
+          'title'     => 'Images',
+          'icon'      => 'fa-bars',
+          'uri'       => 'images',
+        ],
       ]);
 
       DB::table('admin_permissions')->insert([

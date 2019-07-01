@@ -26,26 +26,11 @@ class UserRequest extends FormRequest
         return [
             'name'        => 'string|max:255',
             'email'       => 'string|email|max:255',
-            'password'    => 'string|min:8|confirmed',
-            'gender'      => 'string|max:255',
-            'birthday'    => 'date',
-            'birth_year'  => 'required_with:birth_month,birth_day',
-            'birth_month' => 'required_with:birth_year,birth_day',
-            'birth_day'   => 'required_with:birth_year,birth_month',
-            // 'image' => 'file|mimes:jpeg,bmp,png|max:10000'
+            'sales'       => 'integer|max:255',
+            'pv'          => 'integer|max:255',
+            'blog_url'    => 'string|max:255',
+            'tw_url'      => 'string|max:255',
         ];
     }
 
-    public function getValidatorInstance()
-    {
-        if ($this->input('birth_day') && $this->input('birth_month') && $this->input('birth_year'))
-        {
-            $birthDate = implode('-', $this->only(['birth_year', 'birth_month', 'birth_day']));
-            $this->merge([
-                'birthday' => $birthDate,
-            ]);
-        }
-
-        return parent::getValidatorInstance();
-    }
 }

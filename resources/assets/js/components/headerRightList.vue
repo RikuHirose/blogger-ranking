@@ -2,6 +2,9 @@
   <div class="">
     <a
       class="pl-3 m-header-list--link"
+      href="/ranking">ランキングを見てみる</a>
+    <a
+      class="pl-3 m-header-list--link"
       @click="showLoginModal()">ログイン</a>
     <a
       class="pl-3 m-header-list--link"
