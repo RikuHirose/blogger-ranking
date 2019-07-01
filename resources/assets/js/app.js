@@ -14,12 +14,14 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import mobile from 'is-mobile'
 // require swiper styles
 import 'swiper/dist/css/swiper.css'
+import SocialSharing from 'vue-social-sharing'
 
 Vue.prototype.$axios = window.axios
 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 Vue.use(vueSmoothScroll)
 Vue.use(Sticky)
+Vue.use(SocialSharing)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
