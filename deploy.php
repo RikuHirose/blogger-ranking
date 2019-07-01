@@ -10,7 +10,7 @@ $dotenv->load();
 set('application', env('APP_NAME'));
 // 'git@github.com:Fendo181/lolipop-mc-starter-laravel.git'
 // https://github.com/RikuHirose/shunta-webapp.git
-set('repository', 'https://github.com/RikuHirose/shunta-webapp.git');
+set('repository', 'https://github.com/RikuHirose/blogger-ranking.git');
 // 'master'
 set('branch', 'master');
 set('git_tty', false);
