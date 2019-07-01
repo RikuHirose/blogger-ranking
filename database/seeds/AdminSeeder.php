@@ -76,42 +76,6 @@ class AdminSeeder extends Seeder
       DB::table('admin_menu')->insert([
         [
           'parent_id' => 8,
-          'title'     => 'Categories',
-          'icon'      => 'fa-bars',
-          'uri'       => 'categories',
-        ],
-        [
-          'parent_id' => 8,
-          'title'     => 'Situations',
-          'icon'      => 'fa-bars',
-          'uri'       => 'situations',
-        ],
-        [
-          'parent_id' => 8,
-          'title'     => 'Favorites',
-          'icon'      => 'fa-bars',
-          'uri'       => 'favorites',
-        ],
-        [
-          'parent_id' => 8,
-          'title'     => 'Images',
-          'icon'      => 'fa-bars',
-          'uri'       => 'images',
-        ],
-        [
-          'parent_id' => 8,
-          'title'     => 'Restaurant_Images',
-          'icon'      => 'fa-bars',
-          'uri'       => 'restaurantImages',
-        ],
-        [
-          'parent_id' => 8,
-          'title'     => 'Restaurants',
-          'icon'      => 'fa-bars',
-          'uri'       => 'restaurants',
-        ],
-        [
-          'parent_id' => 8,
           'title'     => 'SocialProviders',
           'icon'      => 'fa-bars',
           'uri'       => 'socialProviders',
