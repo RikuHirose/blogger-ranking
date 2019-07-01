@@ -35,12 +35,12 @@
             </div>
 
             <div class="m-frmTextbox">
-              <label>先月の売り上げ</label>
+              <label>{{ date('Y年m月', strtotime('first day of previous month')) }}の売り上げ</label>
               <input type="number" class="form-control" name="last_mounth_sales" value="{{ $currentUser->last_mounth_sales }}" required>
             </div>
 
             <div class="m-frmTextbox">
-              <label>先月のPV</label>
+              <label>{{ date('Y年m月', strtotime('first day of previous month')) }}のPV</label>
               <input type="number" class="form-control" name="last_mounth_pv" value="{{ $currentUser->last_mounth_pv }}" required>
             </div>
 

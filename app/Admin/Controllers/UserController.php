@@ -3,74 +3,19 @@
 namespace App\Admin\Controllers;
 
 use App\Models\User;
-use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\HasResourceActions;
+use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class UserController extends Controller
+class UserController extends AdminController
 {
-    use HasResourceActions;
-
     /**
-     * Index interface.
+     * Title for current resource.
      *
-     * @param Content $content
-     * @return Content
+     * @var string
      */
-    public function index(Content $content)
-    {
-        return $content
-            ->header('Index')
-            ->description('description')
-            ->body($this->grid());
-    }
-
-    /**
-     * Show interface.
-     *
-     * @param mixed $id
-     * @param Content $content
-     * @return Content
-     */
-    public function show($id, Content $content)
-    {
-        return $content
-            ->header('Detail')
-            ->description('description')
-            ->body($this->detail($id));
-    }
-
-    /**
-     * Edit interface.
-     *
-     * @param mixed $id
-     * @param Content $content
-     * @return Content
-     */
-    public function edit($id, Content $content)
-    {
-        return $content
-            ->header('Edit')
-            ->description('description')
-            ->body($this->form()->edit($id));
-    }
-
-    /**
-     * Create interface.
-     *
-     * @param Content $content
-     * @return Content
-     */
-    public function create(Content $content)
-    {
-        return $content
-            ->header('Create')
-            ->description('description')
-            ->body($this->form());
-    }
+    protected $title = 'App\Models\User';
 
     /**
      * Make a grid builder.
@@ -81,13 +26,18 @@ class UserController extends Controller
     {
         $grid = new Grid(new User);
 
-        $grid->id('Id');
-        $grid->email('Email');
-        $grid->email_verified_at('Email verified at');
-        $grid->password('Password');
-        $grid->remember_token('Remember token');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->column('id', __('Id'));
+        $grid->column('image_id', __('Image id'));
+        $grid->column('name', __('Name'));
+        $grid->column('email', __('Email'));
+        $grid->column('last_mounth_sales', __('Last mounth sales'));
+        $grid->column('last_mounth_pv', __('Last mounth pv'));
+        $grid->column('blog_url', __('Blog url'));
+        $grid->column('tw_url', __('Tw url'));
+        $grid->column('ban', __('Ban'));
+        $grid->column('remember_token', __('Remember token'));
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -102,13 +52,18 @@ class UserController extends Controller
     {
         $show = new Show(User::findOrFail($id));
 
-        $show->id('Id');
-        $show->email('Email');
-        $show->email_verified_at('Email verified at');
-        $show->password('Password');
-        $show->remember_token('Remember token');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
+        $show->field('id', __('Id'));
+        $show->field('image_id', __('Image id'));
+        $show->field('name', __('Name'));
+        $show->field('email', __('Email'));
+        $show->field('last_mounth_sales', __('Last mounth sales'));
+        $show->field('last_mounth_pv', __('Last mounth pv'));
+        $show->field('blog_url', __('Blog url'));
+        $show->field('tw_url', __('Tw url'));
+        $show->field('ban', __('Ban'));
+        $show->field('remember_token', __('Remember token'));
+        $show->field('created_at', __('Created at'));
+        $show->field('updated_at', __('Updated at'));
 
         return $show;
     }
@@ -122,10 +77,15 @@ class UserController extends Controller
     {
         $form = new Form(new User);
 
-        $form->email('email', 'Email');
-        $form->datetime('email_verified_at', 'Email verified at')->default(date('Y-m-d H:i:s'));
-        $form->password('password', 'Password');
-        $form->text('remember_token', 'Remember token');
+        $form->number('image_id', __('Image id'));
+        $form->text('name', __('Name'));
+        $form->email('email', __('Email'));
+        $form->number('last_mounth_sales', __('Last mounth sales'));
+        $form->number('last_mounth_pv', __('Last mounth pv'));
+        $form->text('blog_url', __('Blog url'));
+        $form->text('tw_url', __('Tw url'));
+        $form->switch('ban', __('Ban'));
+        $form->text('remember_token', __('Remember token'));
 
         return $form;
     }

@@ -30,11 +30,15 @@
               <td>{{ $currentUser->email }}</td>
             </tr>
             <tr>
-              <th scope="row">先月の売り上げ</th>
+              <th scope="row">
+                {{ date('Y年m月', strtotime('first day of previous month')) }}の売り上げ
+              </th>
               <td>{{ $currentUser->last_mounth_sales }} 円</td>
             </tr>
             <tr>
-              <th scope="row">先月のPV</th>
+              <th scope="row">
+                {{ date('Y年m月', strtotime('first day of previous month')) }}のPV
+              </th>
               <td>{{ $currentUser->last_mounth_pv }} pv</td>
             </tr>
             <tr>

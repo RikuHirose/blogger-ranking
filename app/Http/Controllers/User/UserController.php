@@ -15,6 +15,7 @@ use App\Repositories\FavoriteRepositoryInterface;
 
 use App\Models\Category;
 use App\Models\Restaurant;
+use DB;
 
 class UserController extends Controller
 {
@@ -42,8 +43,25 @@ class UserController extends Controller
 
     public function show()
     {
+        $rank = DB::table('users as a')
+            ->select(
+                'id',
+                'last_mounth_sales',
+                DB::raw(
+                    "(select count(last_mounth_sales) FROM users b WHERE a.last_mounth_sales < b.last_mounth_sales) + 1 as rank"
+                )
+            )
+            ->whereNotNull('a.last_mounth_sales')
+            ->where('id', \Auth::user()->id)
+            ->orderBy('rank', 'ASC')
+        ->first();
+
+        $count = count($this->userRepository->getAllUsers());
+
         return view('pages.user.show',
             [
+                'rank'  => $rank->rank,
+                'count' => $count
             ]
         );
     }

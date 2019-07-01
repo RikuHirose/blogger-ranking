@@ -25,6 +25,10 @@
                                     <div class="dropdown-menu s-header-list__dropdown__nav-lists">
                                         <a href="{{ route('mypage.show') }}" class="dropdown-item">マイページ</a>
                                         <div class="dropdown-divider"></div>
+
+                                        <a href="{{ route('ranking.index') }}" class="dropdown-item">ランキングを見る</a>
+                                        <div class="dropdown-divider"></div>
+
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
