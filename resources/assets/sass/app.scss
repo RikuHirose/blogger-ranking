@@ -1,0 +1,77 @@
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+/* ============================================================================
+ * mixin
+ * ========================================================================= */
+@import "mixin";
+
+/* ============================================================================
+ * base
+ * ========================================================================= */
+@import "./base/base";
+
+/* ============================================================================
+ * common
+ * ========================================================================= */
+@import "./common/fontawesome.scss";
+
+
+
+/* ============================================================================
+ * Layout
+ * ========================================================================= */
+@import "./structure/header";
+@import "./structure/footer";
+@import "./structure/content";
+@import "./structure/sidebar";
+
+@import "./structure/header-sp";
+
+/* ============================================================================
+ * components
+ * ========================================================================= */
+@import "./components/user/restaurants/indexCard";
+@import "./components/user/restaurants/recoCard";
+@import "./components/user/restaurants/show/info";
+@import "./components/user/restaurants/show/detailInfo";
+
+@import "./components/user/sidebar/users/show";
+@import "./components/user/sidebar/restaurants/show";
+
+
+ /* ============================================================================
+ * modules
+ * ========================================================================= */
+@import "./modules/button";
+@import "./modules/icon";
+@import "./modules/form";
+@import "./modules/search";
+@import "./modules/search-sp";
+@import "./modules/tag";
+@import "./modules/breadcrumb";
+@import "./modules/modal";
+@import "./modules/hamburger";
+
+
+ /* ============================================================================
+ * pages
+ * ========================================================================= */
+@import "./pages/index";
+@import "./pages/index-sp";
+@import "./pages/about";
+@import "./pages/restaurants/index";
+@import "./pages/restaurants/index-sp";
+@import "./pages/restaurants/show";
+@import "./pages/restaurants/show-sp";
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}

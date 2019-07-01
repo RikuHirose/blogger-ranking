@@ -1,0 +1,11 @@
+/* ----------------------------------------------------------------------------
+ * sidebar show
+ * ------------------------------------------------------------------------- */
+
+ .c-sidebar-users-show {
+  .active-item {
+    border-left: 2px solid $c-text-headliner;
+    color: $c-text-headliner;
+    font-weight: 600;
+  }
+ }

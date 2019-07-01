@@ -1,0 +1,18 @@
+@include max-screen($breakpoint-mobile) {
+  #header {
+    .s-header {
+      &--wrap {
+      }
+      &-logo{
+        &__sizing {
+        }
+      }
+      .line-style {
+        height: 10%;
+      }
+      .bm-burger-bars {
+        background-color: #bdc3c7;
+      }
+    }
+  }
+}

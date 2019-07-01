@@ -1,0 +1,29 @@
+/* ----------------------------------------------------------------------------
+ * restaurants recommend card
+ * ------------------------------------------------------------------------- */
+.c-res-reco-card {
+  width: 100%;
+  padding: 0 8px;
+  &--wrap {
+  }
+  &--img__sizing {
+    width: 100%;
+    height : 120px;
+    object-fit: cover;
+  }
+  &__ttl {
+    &--link {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+  }
+  &__content {
+    border: 1px solid #eaeaeb;
+    padding: 8px;
+    min-height: 80px;
+  }
+  .star-icon {
+    font-size: 12px;
+  }
+}

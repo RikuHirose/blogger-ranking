@@ -1,0 +1,23 @@
+/* ----------------------------------------------------------------------------
+ * page restaurant show
+ * ------------------------------------------------------------------------- */
+.p-res-show {
+  &--content, &--description, &--detail-info , &--map, &--recommend-restaurants, &--sns-share{
+    margin: 40px 0;
+    h2 {
+      margin-bottom : 16px;
+      font-size: 16px;
+      color: #000000;
+    }
+  }
+
+  &--description {
+    p {
+      line-height: 2.2;
+      letter-spacing: 4px;
+      color: #333333;
+      overflow: hidden;
+      font-size: 12px;
+    }
+  }
+}

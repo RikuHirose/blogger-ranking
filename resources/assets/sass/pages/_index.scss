@@ -1,0 +1,197 @@
+/* ----------------------------------------------------------------------------
+ * page  index
+ * ------------------------------------------------------------------------- */
+.p-index {
+  h2 {
+    margin-bottom : 16px;
+    font-size: 32px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -25px;
+      display: inline-block;
+      width: 70px;
+      height: 8px;
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background: #293162;
+      border-radius: 1px;
+    }
+  }
+  .h2-desc {
+    margin: 24px;
+  }
+
+  &__category {
+    margin: 40px 0;
+  }
+  &__point, &__reco-job, &__message {
+    padding: 40px 0;
+  }
+
+  &__image {
+    height: 400px;
+    position: relative;
+    background-image: url(/images/bg-top.jpg);
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    padding-top: 136px;
+    padding-bottom: 40px;
+    width: 100%;
+  }
+
+  &--copy {
+    position: relative;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0,0,0,.5);
+    margin-bottom: 48px;
+  }
+
+  &__point{
+    .fa-style {
+      display: block;
+      height: 2em;
+      line-height: 2em;
+      position: relative;
+      vertical-align: middle;
+      width: 2.5em;
+      margin: 0 auto;
+      .fa-primary {
+        color: #796bae;
+      }
+      .fa-white {
+        color: $c-white;
+      }
+      i {
+        left: 0;
+        position:absolute;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    .card-ttl {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 16px 0;
+    }
+  }
+
+  &__category {
+
+    &__images {
+
+      &--wrap {
+        line-height: 0;
+        display: flex;
+        display: -webkit-flex;
+        width: 100%;
+      }
+
+      &--link {
+        width: 20%;
+        img {
+          width: 100%;
+          height: 380px;
+          object-fit: cover;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          transition: all .3s;
+
+          &:hover {
+            -webkit-filter: brightness(0.8);
+            -moz-filter: brightness(0.8);
+            -o-filter: brightness(0.8);
+            -ms-filter: brightness(0.8);
+            filter: brightness(0.8);
+            -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+            box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+
+          }
+        }
+        .category__info {
+          position: absolute;
+          bottom: 32px;
+          // width: 100%;
+          color: $c-white;
+          text-align: left;
+          font-weight: 700;
+          -webkit-transition: all .4s cubic-bezier(.165,.84,.44,1);
+          transition: all .4s cubic-bezier(.165,.84,.44,1);
+        }
+        .category__name {
+          margin: 0 0 8px 4px;
+          text-shadow: 0 0 12px rgba(0,0,0,.24);
+          font-weight: 700;
+          font-size: 24px;
+          font-family: YakuHanJP Black,Noto Sans Japanese Black;
+        }
+      }
+    }
+  }
+
+  &__message {
+    height: 336px;
+    position: relative;
+    background-image: url(https://farie.s3-ap-northeast-1.amazonaws.com/farie/top-bottom-bg.jpg);
+    object-fit: cover;
+    background-size: cover;
+    z-index: 0;
+    background-position: bottom;
+    padding-top: 100px;
+    padding-bottom: 90px;
+    width: 100%;
+    -webkit-filter: brightness(0.9);
+    -moz-filter: brightness(0.9);
+    -o-filter: brightness(0.9);
+    -ms-filter: brightness(0.9);
+    filter: brightness(0.9);
+    &--wrap {
+      p {
+        color: $c-white;
+        margin-bottom: 32px;
+        font-size: 24px;
+      }
+      button {
+        width: 280px;
+        height: 60px;
+      }
+    }
+  }
+
+  &__search-form {
+    width: 100%;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  .m-search {
+    i {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 16px 10px;
+    }
+    input, button {
+      height: 54px;
+    }
+  }
+
+}

@@ -1,0 +1,24 @@
+/* ----------------------------------------------------------------------------
+ * page restaurants show sp
+ * ------------------------------------------------------------------------- */
+@include max-screen($breakpoint-mobile) {
+  .p-res-show {
+    &--content, &--description, &--detail-info , &--map, &--recommend-restaurants, &--sns-share, &--info {
+      margin: 24px 0;
+    }
+    &--content {
+      margin-top: 0;
+    }
+    &--slideshow {
+      padding: 0;
+    }
+   &-sp {
+      .c-res-show-detail-info__table th {
+        min-width: 144px;
+      }
+      .c-res-show-info__name h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/* ----------------------------------------------------------------------------
+ * page  index
+ * ------------------------------------------------------------------------- */
+ @include max-screen($breakpoint-mobile) {
+  .p-index {
+    &-sp {
+      .m-search__suggest {
+        position: relative;
+        top: 5.5%;
+      }
+      .m-search {
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 16px 10px;
+        }
+        input, button {
+          height: 54px;
+        }
+      }
+    }
+    &--copy {
+      font-size: 25px;
+    }
+
+    &__image {
+      padding: 64px 0 40px 0;
+    }
+
+    .c-res-reco-card__ttl {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

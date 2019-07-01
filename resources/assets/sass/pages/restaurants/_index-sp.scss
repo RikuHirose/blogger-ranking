@@ -1,0 +1,22 @@
+/* ----------------------------------------------------------------------------
+ * page restaurants index sp
+ * ------------------------------------------------------------------------- */
+@include max-screen($breakpoint-mobile) {
+  .p-res-index-sp {
+    .c-res-index-card--desc {
+      min-height: 96px;
+    }
+    .c-res-index-card--desc-p {
+      height: 40px;
+    }
+    .c-res-index-card--img__sizing {
+      height: 228px;
+    }
+
+    .m-search {
+      input, button {
+        height: 48px;
+      }
+    }
+  }
+}

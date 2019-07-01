@@ -1,0 +1,24 @@
+/* ----------------------------------------------------------------------------
+ * page about
+ * ------------------------------------------------------------------------- */
+.p-about-privacy , .p-about-term{
+  margin: 40px 0;
+  h1 {
+    color: #000000;
+    font-size: 24px;
+    margin: 16px 0;
+  }
+  h2 {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #000000;
+  }
+  p {
+    line-height: 2.2;
+    letter-spacing: 4px;
+    color: #333333;
+    overflow: hidden;
+    font-size: 12px;
+    margin: 16px 0;
+  }
+}

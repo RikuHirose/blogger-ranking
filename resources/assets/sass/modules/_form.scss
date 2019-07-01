@@ -1,0 +1,27 @@
+/* ----------------------------------------------------------------------------
+ * Form
+ * ------------------------------------------------------------------------- */
+ .m-frmTextbox {
+  input {
+    width: 100%;
+    height: 32px;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+    // padding: 0 0 0 24px;
+    // z-index: 99;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  label {
+    border-bottom: 1px solid #CCCCCC;
+    display: block;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+  .error-message {
+    font-size: 8px;
+    color: $c-text-error;
+  }
+ }

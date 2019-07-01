@@ -1,0 +1,150 @@
+/* ----------------------------------------------------------------------------
+ * module search  sp
+ * ------------------------------------------------------------------------- */
+@include max-screen($breakpoint-mobile) {
+  .m-search {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border-radius: 2px;
+    width: 88%;
+    margin: 0 auto;
+    &--wrap {
+      display: block;
+    }
+    &__input--wrap {
+      position: relative;
+      width: 100%;
+      border-top: 1px solid #d5d5d8;
+    }
+    button {
+      width: 100%;
+      border-left: none;
+    }
+    &__suggest {
+      width: 100%;
+      min-height: 128px;
+      height: auto;
+      &--wrap {
+        background: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        &__input {
+          padding: 0 16px;
+          width: 100%;
+          &::before {
+            font-family: $_fontawesome;
+            content: $_fa-utensils;
+            font-weight: 600;
+            font-size: 0.8em;
+          }
+        }
+      }
+      &--caution {
+        margin-bottom: 16px;
+      }
+
+      // &-overlay {
+      //   background: rgba(0, 0, 0, 0.5);
+      //   .m-btn[btn-type="search-obsessed"], .m-search__suggest--wrap__input{
+      //     border-top: 1px solid #aaaaaa;
+      //     border-bottom: 1px solid #d5d5d8;
+      //     border-left: none !important;
+      //   }
+      //   .m-search__suggest {
+      //     &--wrap {
+      //       width: 88%;
+      //       margin: 0 auto;
+      //       &__input {
+      //       }
+      //     }
+      //     &--list {
+      //       padding: 0 16px;
+      //       padding-top: 16px;
+      //       width: 100%;
+      //     }
+      //     &__category-list, &__restaurant-list {
+      //       width: 100%;
+      //     }
+      //     &__restaurant-list {
+      //       padding: 0;
+      //       border-left: none;
+      //     }
+      //   }
+      // }
+
+      &-fullscreen {
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        position: fixed;
+        z-index: 30;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .m-search__suggest {
+          &--wrap {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            display: block;
+            &__input {
+            }
+          }
+          &--list {
+            padding: 0 16px;
+            padding-top: 16px;
+            width: 100%;
+            border-top: 1px solid #d5d5d8;
+
+            &--box {
+              .suggest-box {
+                margin-bottom: 16px;
+                display: flex;
+                display: -webkit-flex;
+                span {
+                  min-width: 96px;
+                }
+
+                .budget-type {
+                  display: flex;
+                  display: -webkit-flex;
+                }
+              }
+            }
+          }
+
+          &__category-list {
+            border-right:  none;
+          }
+          &__category-list, &__restaurant-list , &__situation-list{
+            width: 100%;
+            margin : 24px 0;
+          }
+          &__tag {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .clearObsesed {
+      &--wrap {
+        margin-top: 24px;
+      }
+    }
+
+    .td--switch label {
+      width: 32px;
+    }
+
+    .m-btn[btn-type="search-obsessed"] {
+      // border-top: 1px solid #aaaaaa;
+      // border-bottom: 1px solid #d5d5d8;
+      border-left: none !important;
+      border-right: none !important;
+    }
+  }
+}

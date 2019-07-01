@@ -1,0 +1,60 @@
+/* ----------------------------------------------------------------------------
+ * restaurants indexCard
+ * ------------------------------------------------------------------------- */
+
+ .c-res-index-card {
+  &--img__wrap {
+    padding: 0;
+  }
+  &--img__sizing {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &__ttl {
+    padding-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.0;
+    margin: 0;
+    font-weight: 600;
+
+    &--wrap {
+      min-height: 40px;
+    }
+
+    &--link {
+      color: $c-text-headliner;
+    }
+  }
+
+  &--desc {
+    margin-top: 16px;
+    min-height: 96px;
+    &-ttl {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    &-p {
+      font-size: 12px;
+      height: 32px;
+      overflow: hidden;
+      position: relative;
+
+      // &::after {
+      //   content: "...";
+      //   position: absolute;
+      //   top: 16px;
+      //   left: 352px;
+      // }
+    }
+  }
+ }

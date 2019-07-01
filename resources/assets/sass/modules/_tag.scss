@@ -1,0 +1,21 @@
+/* ----------------------------------------------------------------------------
+ * tag
+ * ------------------------------------------------------------------------- */
+.m-tag {
+  margin-left: 8px;
+  display: inline-block;
+  font-family: NotoSansCJKjp;
+  font-size: 10px;
+  line-height: 1.6;
+  height: 16px;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 1.8px;
+  padding: 0 8px 0 8px;
+  background-color: $c-tag;
+
+  &__situation {
+    background-color: #F78901;
+  }
+}

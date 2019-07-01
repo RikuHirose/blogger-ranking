@@ -1,0 +1,29 @@
+/* ----------------------------------------------------------------------------
+ * hamburger menu
+ * ------------------------------------------------------------------------- */
+.m-hamburger {
+  .bm-burger-button {
+    top: 1px;
+  }
+  .bm-menu {
+    background-color: $c-white;
+    border-left: 1px solid #d5d5d5;
+  }
+  .bm-item-list > * > span {
+    font-size: 14px;
+    color: #555555;
+    height: 30px;
+    line-height: 30px;
+  }
+  .bm-item-list > * > i {
+    min-width: 48px;
+  }
+  .bm-item-list {
+    img {
+      margin-right: 17px;
+    }
+  }
+}
+.bm-overlay {
+  background: none !important;
+}

@@ -1,0 +1,50 @@
+/* ----------------------------------------------------------------------------
+ * restaurants show Info
+ * ------------------------------------------------------------------------- */
+.c-res-show-info {
+  &__name {
+    h1 {
+      color: $c-text-headliner;
+      font-size: 24px;
+    }
+  }
+  &__content {
+    padding: 8px 0;
+
+    &__top {
+      .star-icon {
+        font-size: 16px;
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      display: table;
+      margin-top: 8px;
+      .fa-lunch {
+        &::before {
+          color: #FFA012;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+      .fa-dinner {
+        &::before {
+          color: #4C4C91;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .heart-icon--wrap {
+        display: inline-block;
+        top: -3px;
+        position: relative;
+        font-size: 16px;
+      }
+    }
+  }
+
+}
