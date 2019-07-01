@@ -18,10 +18,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
-        'gender',
-        'birthday',
-        'image_id',
+        'sales',
+        'blog_url',
+        'tw_url',
+        'ban'
     ];
 
     /**
@@ -42,8 +42,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function image()
-    {
-        return $this->belongsTo(\App\Models\Image::class, 'image_id', 'id');
-    }
 }
