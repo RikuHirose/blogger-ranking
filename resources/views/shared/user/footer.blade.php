@@ -14,7 +14,7 @@
                   <a href="/" class="text-white">トップ</a>
                 </li>
                 <li class="mb-4">
-                  <a href="" class="text-white">お問い合わせ</a>
+                  <a href="https://twitter.com/rikuhirose?lang=ja" class="text-white" target=”_blank”>開発者 Twitter</a>
                 </li>
                 <li class="mb-4">
                   <a href="{{ route('about.privacy') }}" class="text-white">プライバシーポリシー</a>

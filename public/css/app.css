@@ -11164,6 +11164,104 @@ input[type=button]::focus {
 }
 
 /* ----------------------------------------------------------------------------
+ * ranking top3
+ * ------------------------------------------------------------------------- */
+
+.c-ranking-top3 {
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.c-ranking-top3 .user-box {
+  text-align: center;
+  position: relative;
+}
+
+.c-ranking-top3 .user-box img {
+  z-index: 2;
+}
+
+.c-ranking-top3 .user-box .fa-crown {
+  z-index: 3;
+  display: block;
+  position: absolute;
+  top: 111px;
+  right: 138px;
+}
+
+.c-ranking-top3 .user-box .fa-crown[ranking="1"] {
+  font-size: 32px;
+  top: 161px;
+}
+
+.c-ranking-top3 .user-box .fa-crown[ranking="2"] {
+  font-size: 32px;
+}
+
+.c-ranking-top3 .user-box .fa-crown[ranking="3"] {
+  font-size: 32px;
+}
+
+.c-ranking-top3 .user-box__info {
+  margin-top: 4px;
+}
+
+.c-ranking-top3 .user-box__info__name {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.c-ranking-top3 .user-box__info__desc {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+/* ----------------------------------------------------------------------------
+ * ranking table
+ * ------------------------------------------------------------------------- */
+
+.c-ranking-table {
+  border-collapse: collapse;
+  margin-top: 32px;
+}
+
+.c-ranking-table tbody tr:nth-of-type(odd) {
+  background-color: #fafbfb;
+}
+
+.c-ranking-table tr {
+  height: 80px;
+  width: 100%;
+}
+
+.c-ranking-table td {
+  padding: 0px;
+  height: 48px;
+  text-align: center;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: inherit;
+  color: #16325c;
+  vertical-align: middle;
+}
+
+.c-ranking-table .rank {
+  width: 10%;
+}
+
+.c-ranking-table .image,
+.c-ranking-table .name {
+  width: 20%;
+}
+
+.c-ranking-table .info,
+.c-ranking-table .desc {
+  width: 25%;
+}
+
+/* ----------------------------------------------------------------------------
  * sidebar show
  * ------------------------------------------------------------------------- */
 
@@ -11604,6 +11702,30 @@ a.m-btn {
   font-family: "Font Awesome 5 Brands";
   content: "\F099";
   font-weight: 600;
+}
+
+.fa-facebook::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\F39E";
+  font-weight: 600;
+}
+
+.fa-crown::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F521";
+  font-weight: 600;
+}
+
+.fa-crown[ranking="1"] {
+  color: #FFED55;
+}
+
+.fa-crown[ranking="2"] {
+  color: #C8C8C8;
+}
+
+.fa-crown[ranking="3"] {
+  color: #E4B18D;
 }
 
 /* ----------------------------------------------------------------------------
@@ -12094,7 +12216,8 @@ a.m-btn {
 
 .p-index__point,
 .p-index__reco-job,
-.p-index__message {
+.p-index__message,
+.p-index__top3-blogger {
   padding: 40px 0;
 }
 

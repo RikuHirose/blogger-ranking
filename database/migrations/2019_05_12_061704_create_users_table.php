@@ -15,17 +15,22 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('image_id')->unsigned()->index()->nullable();
 
             $table->string('name')->nullable();
             $table->string('email')->unique()->nullable();
 
-            $table->bigInteger('sales')->nullable();
+            $table->bigInteger('last_mounth_sales')->nullable();
+            $table->bigInteger('last_mounth_pv')->nullable();
+
             $table->string('blog_url')->nullable();
             $table->string('tw_url')->nullable();
 
             $table->boolean('ban')->nullable();
 
             $table->rememberToken();
+
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
 
             $table->timestamps();
         });

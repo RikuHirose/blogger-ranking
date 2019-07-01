@@ -18,6 +18,12 @@ Breadcrumbs::for('restaurants.show', function ($trail, $restaurant) {
 
 });
 
+// top > ランキング
+Breadcrumbs::for('ranking', function ($trail) {
+    $trail->parent('index');
+    $trail->push('ランキング', route('ranking.index'));
+});
+
 
 // top > 登録情報
 Breadcrumbs::for('mypage.show', function ($trail, $currentUser) {

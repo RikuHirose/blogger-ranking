@@ -56,9 +56,14 @@ Route::group(['middleware' => ['auth']], function ()
 
 Route::get('/', 'User\IndexController@index')->name('index');
 
+// Ranking
+Route::group(['prefix' => 'ranking', 'as' => 'ranking.'], function () {
+  Route::get('/', 'User\RankingController@index')->name('index');
+});
+
 // restaurants
-Route::resource('restaurants', 'User\RestaurantController', ['only' => ['index', 'show']]);
-Route::get('/q', 'User\RestaurantController@index')->name('restaurants.search');
+// Route::resource('restaurants', 'User\RestaurantController', ['only' => ['index', 'show']]);
+// Route::get('/q', 'User\RestaurantController@index')->name('restaurants.search');
 
 Route::group(['as' => 'about.'], function () {
   Route::get('/privacy', 'User\AboutController@privacy')->name('privacy');

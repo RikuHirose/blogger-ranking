@@ -15,6 +15,13 @@
       <div class="social-content">
         <a
           class="m-btn w-100 mb-3"
+          href="/auth/login/facebook"
+          btn-type="facebook">
+          <i class="fa-facebook fa-fw" />
+          FaceBookでログインする
+        </a>
+        <a
+          class="m-btn w-100 mb-3"
           href="/auth/login/twitter"
           btn-type="twitter">
           <i class="fa-twitter fa-fw" />

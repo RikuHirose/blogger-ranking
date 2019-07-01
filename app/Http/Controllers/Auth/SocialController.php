@@ -61,11 +61,12 @@ class SocialController extends Controller
 
         if(!$provider) {
 
-          $user_image = Image::firstOrCreate(
-              [
-                  'url' => $socialUser->avatar_original
-              ]
-          );
+          try {
+            $user_image = Image::firstOrCreate(
+                [
+                    'url' => $socialUser->avatar_original
+                ]
+            );
 
             $user = User::firstOrCreate(
                 [
@@ -77,11 +78,15 @@ class SocialController extends Controller
 
             SocialProvider::firstOrCreate(
                 [
-                    'user_id'     => $user->id,
-                    'provider_id' => $socialUser->getId(),
-                    'provider'    => $providerName
+                      'user_id'     => $user->id,
+                      'provider_id' => $socialUser->getId(),
+                      'provider'    => $providerName
                 ]
             );
+          } catch (Exception $e) {
+
+          }
+
 
         } else {
 

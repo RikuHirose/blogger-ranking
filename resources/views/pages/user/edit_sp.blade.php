@@ -33,49 +33,27 @@
               <label>メールアドレス</label>
               <input type="email" class="form-control" name="email" value="{{ $currentUser->email }}" required>
             </div>
+
             <div class="m-frmTextbox">
-              <label>性別</label>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="gender" value="male" @if($currentUser->gender === "male") checked @endif>
-                <span class="form-check-label">男性</span>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="gender" value="female" @if($currentUser->gender === "female") checked @endif>
-                <span class="form-check-label">女性</span>
-              </div>
+              <label>先月の売り上げ</label>
+              <input type="number" class="form-control" name="last_mounth_sales" value="{{ $currentUser->last_mounth_sales }}" required>
             </div>
 
             <div class="m-frmTextbox">
-              <label>生年月日</label>
-
-              <div class="form-row">
-
-                <div class="form-group col-md-4">
-                  <select id="birth_year" class="form-control" name="birth_year">
-                  <option value="">----</option>
-                    @for ($i = 1910; $i <= 2019; $i++)
-                      <option value="{{ $i }}"@if(old('birth_year') == $i || UserHelper::getBirthYear() == $i) selected @endif>{{ $i }}</option>
-                    @endfor
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <select id="birth_month" class="form-control" name="birth_month">
-                    <option value="">--</option>
-                    @for ($i = 1; $i <= 12; $i++)
-                      <option value="{{ $i }}"@if(old('birth_month') == $i || UserHelper::getBirthMonth() == $i) selected @endif>{{ $i }}</option>
-                    @endfor
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <select id="birth_day" class="form-control" name="birth_day">
-                    <option value="">--</option>
-                    @for ($i = 1; $i <= 31; $i++)
-                      <option value="{{ $i }}"@if(old('birth_day') == $i || UserHelper::getBirthDay() == $i) selected @endif>{{ $i }}</option>
-                    @endfor
-                  </select>
-                </div>
-              </div>
+              <label>先月のPV</label>
+              <input type="number" class="form-control" name="last_mounth_pv" value="{{ $currentUser->last_mounth_pv }}" required>
             </div>
+
+            <div class="m-frmTextbox">
+              <label>ブログ</label>
+              <input type="text" class="form-control" name="blog_url" value="{{ $currentUser->blog_url }}" required>
+            </div>
+
+            <div class="m-frmTextbox">
+              <label>Twitter</label>
+              <input type="text" class="form-control" name="tw_url" value="{{ $currentUser->tw_url }}" required>
+            </div>
+
             <div class="text-center">
               <button type="submit" class="m-btn" btn-type="primary">
                 修正する

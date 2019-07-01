@@ -18,7 +18,6 @@
                                 <header-right-list
                                 :redirect-url="{{ json_encode(url()->full()) }}"></header-right-list>
                             @else
-
                                 <div id="dropdown" class="dropdown s-header-list__dropdown">
                                     <div class="dropdown-toggle" type="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img src="{{ $currentUser->image->url }}" class="s-header-list__avatar">

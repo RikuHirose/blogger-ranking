@@ -30,12 +30,27 @@
               <td>{{ $currentUser->email }}</td>
             </tr>
             <tr>
-              <th scope="row">性別</th>
-              <td>{{ $currentUser->gender }}</td>
+              <th scope="row">先月の売り上げ</th>
+              <td>{{ $currentUser->last_mounth_sales }} 円</td>
             </tr>
             <tr>
-              <th scope="row">生年月日</th>
-              <td>{{ $currentUser->birthday }}</td>
+              <th scope="row">先月のPV</th>
+              <td>{{ $currentUser->last_mounth_pv }} pv</td>
+            </tr>
+            <tr>
+              <th scope="row">ブログ</th>
+              <td>
+                <a href="{{ $currentUser->blog_url }}">{{ $currentUser->blog_url }}</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="fa-twitter"></i>
+                Twitter
+              </th>
+              <td>
+                <a href="{{ $currentUser->tw_url }}">{{ $currentUser->tw_url }}</a>
+              </td>
             </tr>
           </tbody>
         </table>

@@ -16,9 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'image_id',
         'name',
         'email',
-        'sales',
+        'last_mounth_sales',
+        'last_mounth_pv',
         'blog_url',
         'tw_url',
         'ban'
@@ -41,5 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function image()
+    {
+        return $this->belongsTo(\App\Models\Image::class, 'image_id', 'id');
+    }
 
 }
