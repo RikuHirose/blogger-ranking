@@ -14,12 +14,12 @@
         </td>
         <td class="name">{{ $user->name }}</td>
         <td class="info">
-          {{ $users[1]->last_mounth_sales }} 円
+          {{ $user->last_mounth_sales }} 円
           /
-          {{ $users[1]->last_mounth_pv }} pv
+          {{ $user->last_mounth_pv }} pv
         </td>
         <td class="desc">
-          <a href="" class="m-btn">詳細</a>
+          <a href="{{ route('users.show', $user->id) }}" class="m-btn">詳細</a>
         </td>
       </tr>
     @endforeach

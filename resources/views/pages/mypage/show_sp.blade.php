@@ -1,20 +1,20 @@
 @extends('layouts.user.app')
 
 @section('content')
-  <div class="p-users-show">
+
+  <div class="p-mypage-show">
     <div class="row mb-2">
       <div class="col-md-6">
-        {{ Breadcrumbs::render('users.show', $user) }}
+        {{ Breadcrumbs::render('mypage.show', $currentUser) }}
       </div>
       <div class="col-md-6"></div>
     </div>
 
     <div class="row">
-     <!-- content -->
+      <!-- content -->
       <div class="col-md-12">
-
         <div class="w-100">
-          <div class="c-ranking-box card-body">
+          <div class="ranking-box card-body">
             <span class="period">
               {{ date('Y年m月d日', strtotime('first day of previous month')) }} ~ {{ date('Y年m月d日', strtotime('last day of previous month')) }}
             </span>
@@ -42,15 +42,13 @@
             </tr>
             <tr>
               <th scope="row">
-                {{ date('Y年m月', strtotime('first day of previous month')) }}
-                の売り上げ
+                {{ date('Y年m月', strtotime('first day of previous month')) }}の売り上げ
               </th>
               <td>{{ $currentUser->last_mounth_sales }} 円</td>
             </tr>
             <tr>
               <th scope="row">
-                {{ date('Y年m月', strtotime('first day of previous month')) }}
-                のPV
+                {{ date('Y年m月', strtotime('first day of previous month')) }}のPV
               </th>
               <td>{{ $currentUser->last_mounth_pv }} pv</td>
             </tr>
@@ -71,8 +69,12 @@
             </tr>
           </tbody>
         </table>
+        <div class="text-center">
+          <a href="{{ route('mypage.edit') }}"  class="m-btn" btn-type="primary">
+            修正する
+          </a>
+        </div>
       </div>
-
     </div>
   </div>
 

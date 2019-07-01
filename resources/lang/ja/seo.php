@@ -2,18 +2,18 @@
 
 return [
     'index' => [
-        'title'       => 'farie(ファリエ) | デートにピッタリなお店がすぐ見つかる',
-        'description' => 'farie(ファリエ)はデートにピッタリなお店がすぐ見つかるサービスです',
+        'title'       => 'ブロガーランキング | あなたの順位がわかる',
+        'description' => 'ブロガーランキングはあなたの順位がすぐわかるサービスです',
         'keywords'    => 'レストラン,デート',
     ],
-    'restaurants' => [
+    'users' => [
       'index' => [
-          'title'       => '検索結果 - farie(ファリエ)',
-          'description' => 'farie(ファリエ)の検索結果',
+          'title'       => '検索結果 - ブロガーランキング',
+          'description' => 'ブロガーランキングの検索結果',
       ],
       'show' => [
-          'title'       => ':title - farie(ファリエ)',
-          'description' => ':title farie(ファリエ)の詳細ページ',
+          'title'       => ':title - ブロガーランキング',
+          'description' => ':title ブロガーランキングの詳細ページ',
       ],
     ],
 ];

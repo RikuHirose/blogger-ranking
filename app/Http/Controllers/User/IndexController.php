@@ -29,7 +29,7 @@ class IndexController extends Controller
 
         return view('pages.index',
             [
-                'top3Users'        => $top3Users,
+                'top3Users' => empty($top3Users) ? '' : $top3Users,
             ]
         );
     }

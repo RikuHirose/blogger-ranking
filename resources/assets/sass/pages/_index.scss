@@ -174,24 +174,8 @@
     }
   }
 
-  &__search-form {
-    width: 100%;
-    // position: relative;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-  }
-
-  .m-search {
-    i {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 16px 10px;
-    }
-    input, button {
-      height: 54px;
-    }
+  .fa-crown {
+    right: 167px !important;
   }
 
 }

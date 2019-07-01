@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="p-user-edit-password">
+  <div class="p-mypage-edit-password">
     <div class="row mb-2">
       <div class="col-md-6">
         {{ Breadcrumbs::render('mypage.edit.password', $currentUser) }}
@@ -11,8 +11,10 @@
     </div>
 
     <div class="row">
+      <!-- sidebar -->
+      @include('components.user.sidebar.users.show', ['editPassword' => true])
       <!-- content -->
-      <div class="col-md-12">
+      <div class="col-md-9">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

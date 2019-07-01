@@ -14,7 +14,7 @@ use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\FavoriteRepositoryInterface;
 
 use App\Models\Category;
-use App\Models\Restaurant;
+use App\Models\User;
 use DB;
 
 class UserController extends Controller
@@ -41,8 +41,9 @@ class UserController extends Controller
         $this->favoriteRepository   = $favoriteRepository;
     }
 
-    public function show()
+    public function show(User $user)
     {
+        $user->load('image');
         $rank = DB::table('users as a')
             ->select(
                 'id',
@@ -60,77 +61,11 @@ class UserController extends Controller
 
         return view('pages.user.show',
             [
+                'user'  => $user,
                 'rank'  => $rank->rank,
                 'count' => $count
             ]
         );
     }
 
-    public function edit()
-    {
-        return view('pages.user.edit',
-            [
-            ]
-        );
-    }
-
-    public function update(UserRequest $request)
-    {
-        $input = $request->only($this->userRepository->getBlankModel()->getFillable());
-
-        $user = $this->userRepository->update(\Auth::user(), $input);
-
-        return view('pages.user.show',
-            [
-            ]
-        );
-    }
-
-    public function showFavorited()
-    {
-        $restaurantIds = $this->favoriteRepository->getFavoritedRestaurantIds(\Auth::user());
-
-        if ($restaurantIds->isEmpty()) {
-
-            return view('pages.user.showFavorited',
-                [
-                    'message' => 'お気に入りに追加されたお店はまだありません'
-                ]
-            );
-
-        } else {
-            $restaurants = $this->restaurantRepository->getRestaurantsbyIds($restaurantIds);
-            $restaurants->load('category', 'restaurantImages.image');
-
-            return view('pages.user.showFavorited',
-                [
-                    'restaurants' => $restaurants
-                ]
-            );
-        }
-    }
-
-    public function editPassword()
-    {
-        return view('pages.user.editPassword',
-            [
-            ]
-        );
-    }
-
-    public function updatePassword(UserRequest $request)
-    {
-        $input = array();
-
-        if (!isset($input['password'])) {
-          array_set($input, 'password', Hash::make($request->input('password')));
-        }
-
-        $user = $this->userRepository->update(\Auth::user(), $input);
-
-        return view('pages.user.editPassword',
-            [
-            ]
-        );
-    }
 }

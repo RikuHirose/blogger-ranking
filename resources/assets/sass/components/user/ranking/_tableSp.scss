@@ -1,0 +1,54 @@
+/* ----------------------------------------------------------------------------
+ * ranking table sp
+ * ------------------------------------------------------------------------- */
+
+ .c-ranking-table-sp {
+  border-collapse: collapse;
+  margin-top: 32px;
+
+  tbody tr:nth-of-type(odd) {
+    background-color: rgb(250, 251, 251);
+  }
+
+  tr {
+    height: 80px;
+    width: 100%;
+  }
+
+  td {
+    padding: 0px;
+    height: 48px;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: inherit;
+    color: rgb(22, 50, 92);
+    vertical-align: middle;
+  }
+
+  .rank{
+    width: 10%;
+  }
+  .image,{
+    width: 20%;
+  }
+  .info {
+    width: 45%;
+    text-align: left;
+  }
+   .desc{
+    width: 25%;
+  }
+
+  .m-btn {
+    min-width: 40px !important;
+  }
+
+  .top3-box {
+    height: 124px;
+
+  }
+
+ }

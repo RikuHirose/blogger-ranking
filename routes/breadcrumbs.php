@@ -25,6 +25,13 @@ Breadcrumbs::for('ranking', function ($trail) {
 });
 
 
+// top > $user->nameの詳細
+Breadcrumbs::for('users.show', function ($trail, $user) {
+    $trail->parent('index');
+    $trail->push($user->name.'の詳細', route('users.show', $user->id));
+
+});
+
 // top > 登録情報
 Breadcrumbs::for('mypage.show', function ($trail, $currentUser) {
     $trail->parent('index');
