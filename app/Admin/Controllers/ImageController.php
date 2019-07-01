@@ -3,74 +3,19 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Image;
-use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\HasResourceActions;
+use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class ImageController extends Controller
+class ImageController extends AdminController
 {
-    use HasResourceActions;
-
     /**
-     * Index interface.
+     * Title for current resource.
      *
-     * @param Content $content
-     * @return Content
+     * @var string
      */
-    public function index(Content $content)
-    {
-        return $content
-            ->header('Index')
-            ->description('description')
-            ->body($this->grid());
-    }
-
-    /**
-     * Show interface.
-     *
-     * @param mixed $id
-     * @param Content $content
-     * @return Content
-     */
-    public function show($id, Content $content)
-    {
-        return $content
-            ->header('Detail')
-            ->description('description')
-            ->body($this->detail($id));
-    }
-
-    /**
-     * Edit interface.
-     *
-     * @param mixed $id
-     * @param Content $content
-     * @return Content
-     */
-    public function edit($id, Content $content)
-    {
-        return $content
-            ->header('Edit')
-            ->description('description')
-            ->body($this->form()->edit($id));
-    }
-
-    /**
-     * Create interface.
-     *
-     * @param Content $content
-     * @return Content
-     */
-    public function create(Content $content)
-    {
-        return $content
-            ->header('Create')
-            ->description('description')
-            ->body($this->form());
-    }
+    protected $title = 'App\Models\Image';
 
     /**
      * Make a grid builder.
@@ -81,16 +26,16 @@ class ImageController extends Controller
     {
         $grid = new Grid(new Image);
 
-        $grid->id('Id');
-        $grid->url('Url');
-        $grid->title('Title');
-        $grid->entity_type('Entity type');
-        $grid->s3_key('S3 key');
-        $grid->s3_bucket('S3 bucket');
-        $grid->s3_region('S3 region');
-        $grid->s3_extension('S3 extension');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->column('id', __('Id'));
+        $grid->column('url', __('Url'));
+        $grid->column('title', __('Title'));
+        $grid->column('entity_type', __('Entity type'));
+        $grid->column('s3_key', __('S3 key'));
+        $grid->column('s3_bucket', __('S3 bucket'));
+        $grid->column('s3_region', __('S3 region'));
+        $grid->column('s3_extension', __('S3 extension'));
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -105,16 +50,16 @@ class ImageController extends Controller
     {
         $show = new Show(Image::findOrFail($id));
 
-        $show->id('Id');
-        $show->url('Url');
-        $show->title('Title');
-        $show->entity_type('Entity type');
-        $show->s3_key('S3 key');
-        $show->s3_bucket('S3 bucket');
-        $show->s3_region('S3 region');
-        $show->s3_extension('S3 extension');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
+        $show->field('id', __('Id'));
+        $show->field('url', __('Url'));
+        $show->field('title', __('Title'));
+        $show->field('entity_type', __('Entity type'));
+        $show->field('s3_key', __('S3 key'));
+        $show->field('s3_bucket', __('S3 bucket'));
+        $show->field('s3_region', __('S3 region'));
+        $show->field('s3_extension', __('S3 extension'));
+        $show->field('created_at', __('Created at'));
+        $show->field('updated_at', __('Updated at'));
 
         return $show;
     }
@@ -128,14 +73,13 @@ class ImageController extends Controller
     {
         $form = new Form(new Image);
 
-        $form->image('url')->uniqueName();
-
-        $form->text('title', 'Title')->placeholder('Please input image title ex) ウダガワ 成ル_1');
-        $form->text('entity_type', 'Entity type')->default('');
-        $form->text('s3_key', 'S3 key')->default(config('filesystems.disks.s3.key'))->attribute(['readOnly'=>'true']);
-        $form->text('s3_bucket', 'S3 bucket')->default(config('filesystems.disks.s3.bucket'))->attribute(['readOnly'=>'true']);
-        $form->text('s3_region', 'S3 region')->default(config('filesystems.disks.s3.region'))->attribute(['readOnly'=>'true']);
-        $form->text('s3_extension', 'S3 extension');
+        $form->url('url', __('Url'));
+        $form->textarea('title', __('Title'));
+        $form->text('entity_type', __('Entity type'));
+        $form->text('s3_key', __('S3 key'));
+        $form->text('s3_bucket', __('S3 bucket'));
+        $form->text('s3_region', __('S3 region'));
+        $form->text('s3_extension', __('S3 extension'));
 
         return $form;
     }

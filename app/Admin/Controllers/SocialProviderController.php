@@ -3,74 +3,19 @@
 namespace App\Admin\Controllers;
 
 use App\Models\SocialProvider;
-use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\HasResourceActions;
+use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class SocialProviderController extends Controller
+class SocialProviderController extends AdminController
 {
-    use HasResourceActions;
-
     /**
-     * Index interface.
+     * Title for current resource.
      *
-     * @param Content $content
-     * @return Content
+     * @var string
      */
-    public function index(Content $content)
-    {
-        return $content
-            ->header('Index')
-            ->description('description')
-            ->body($this->grid());
-    }
-
-    /**
-     * Show interface.
-     *
-     * @param mixed $id
-     * @param Content $content
-     * @return Content
-     */
-    public function show($id, Content $content)
-    {
-        return $content
-            ->header('Detail')
-            ->description('description')
-            ->body($this->detail($id));
-    }
-
-    /**
-     * Edit interface.
-     *
-     * @param mixed $id
-     * @param Content $content
-     * @return Content
-     */
-    public function edit($id, Content $content)
-    {
-        return $content
-            ->header('Edit')
-            ->description('description')
-            ->body($this->form()->edit($id));
-    }
-
-    /**
-     * Create interface.
-     *
-     * @param Content $content
-     * @return Content
-     */
-    public function create(Content $content)
-    {
-        return $content
-            ->header('Create')
-            ->description('description')
-            ->body($this->form());
-    }
+    protected $title = 'App\Models\SocialProvider';
 
     /**
      * Make a grid builder.
@@ -81,12 +26,12 @@ class SocialProviderController extends Controller
     {
         $grid = new Grid(new SocialProvider);
 
-        $grid->id('Id');
-        $grid->user_id('User id');
-        $grid->provider_id('Provider id');
-        $grid->provider('Provider');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->column('id', __('Id'));
+        $grid->column('user_id', __('User id'));
+        $grid->column('provider_id', __('Provider id'));
+        $grid->column('provider', __('Provider'));
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -101,12 +46,12 @@ class SocialProviderController extends Controller
     {
         $show = new Show(SocialProvider::findOrFail($id));
 
-        $show->id('Id');
-        $show->user_id('User id');
-        $show->provider_id('Provider id');
-        $show->provider('Provider');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
+        $show->field('id', __('Id'));
+        $show->field('user_id', __('User id'));
+        $show->field('provider_id', __('Provider id'));
+        $show->field('provider', __('Provider'));
+        $show->field('created_at', __('Created at'));
+        $show->field('updated_at', __('Updated at'));
 
         return $show;
     }
@@ -120,9 +65,9 @@ class SocialProviderController extends Controller
     {
         $form = new Form(new SocialProvider);
 
-        $form->number('user_id', 'User id');
-        $form->text('provider_id', 'Provider id');
-        $form->text('provider', 'Provider');
+        $form->number('user_id', __('User id'));
+        $form->text('provider_id', __('Provider id'));
+        $form->text('provider', __('Provider'));
 
         return $form;
     }

@@ -43,8 +43,8 @@ Route::group(['middleware' => ['auth']], function ()
 
       Route::get('/favorited', 'User\UserController@showFavorited')->name('favorited');
 
-      Route::get('/password', 'User\UserController@editPassword')->name('edit.password');
-      Route::post('/password', 'User\UserController@updatePassword')->name('update.password');
+      // Route::get('/password', 'User\UserController@editPassword')->name('edit.password');
+      // Route::post('/password', 'User\UserController@updatePassword')->name('update.password');
 
   //     Route::get('/{user}/reviewed', 'User\UserController@showReviewed')->name('show.reviewed');
   //     Route::get('/{user}/history', 'User\UserController@showHistory')->name('show.history');
