@@ -24,12 +24,11 @@ class IndexController extends Controller
         // $recommendRestaurants = $this->restaurantRepository->getRecommendRestaurants($restaurant);
         // $recommendRestaurants->load('category', 'restaurantImages.image');
         $top3Users = $this->userRepository->getBySalesTop3('desc');
-
         \SeoHelper::setIndexSeo();
 
         return view('pages.index',
             [
-                'top3Users' => empty($top3Users) ? '' : $top3Users,
+                'top3Users' => $top3Users->isEmpty() ? null : $top3Users,
             ]
         );
     }

@@ -72,24 +72,26 @@
     </section>
 
     <!-- p-index--top3-blogger -->
-    <section class="p-index__top3-blogger">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-12">
-              <div class="text-center">
-                  <h2 class="">
-                      {{ Config::get('app.name') }}とは
-                  </h2>
+    @if(!is_null($top3Users))
+      <section class="p-index__top3-blogger">
+        <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-12">
+                <div class="text-center">
+                    <h2 class="">
+                        {{ Config::get('app.name') }}とは
+                    </h2>
+                </div>
+                <p class="text-center h2-desc">デートにピッタリなお店がすぐ見つかるサービスです</p>
               </div>
-              <p class="text-center h2-desc">デートにピッタリなお店がすぐ見つかるサービスです</p>
-            </div>
+          </div>
+          <!-- content -->
+          <div class="col-md-12">
+            @include('components.user.ranking.top3', ['users' => $top3Users])
+          </div>
         </div>
-        <!-- content -->
-        <div class="col-md-12">
-          @include('components.user.ranking.top3', ['users' => $top3Users])
-        </div>
-      </div>
-    </section>
+      </section>
+    @endif
      <!-- p-index--message -->
     <section class="p-index__message">
           <div class="container">

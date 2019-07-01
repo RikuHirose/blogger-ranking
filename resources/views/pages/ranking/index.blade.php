@@ -24,10 +24,13 @@
           {{ $message }}
         @endisset
 
+        @if(!is_null($top3Users))
+          @include('components.user.ranking.top3', ['users' => $top3Users])
+        @endif
 
-        @include('components.user.ranking.top3', ['users' => $top3Users])
-
-        @include('components.user.ranking.rankingTable', ['users' => $subordinateUsers])
+        @if(!is_null($subordinateUsers))
+          @include('components.user.ranking.rankingTable', ['users' => $subordinateUsers])
+        @endif
       </div>
     </div>
   </div>

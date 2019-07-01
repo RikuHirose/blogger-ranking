@@ -47,8 +47,8 @@ class RankingController extends Controller
 
         return view('pages.ranking.index',
             [
-                'top3Users'        => $top3Users,
-                'subordinateUsers' => $subordinateUsers
+                'top3Users'        => $top3Users->isEmpty() ? null : $top3Users,
+                'subordinateUsers' => empty($subordinateUsers) ? null : $subordinateUsers,
             ]
         );
     }

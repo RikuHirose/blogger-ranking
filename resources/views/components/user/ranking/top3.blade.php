@@ -1,48 +1,55 @@
 <div class="row mb-3 mt-3 c-ranking-top3">
     <div class="col-md-4 col-sm-6 col-12 user-box">
-      <img class="rounded-circle" src="{{ $users[1]->image->url }}" alt="" width="150px" height="150px">
 
-      <div class="user-box__info">
-        <p class="user-box__info__name">
-          <i class="fa-crown" ranking="2"></i>
-          {{ $users[1]->name }}
-        </p>
-        <p class="user-box__info__desc">
-          {{ $users[1]->last_mounth_sales }} 円
-          /
-          {{ $users[1]->last_mounth_pv }} pv
-        </p>
-      </div>
+      @if(isset($users[1]))
+        <img class="rounded-circle" src="{{ $users[1]->image->url }}" alt="" width="150px" height="150px">
+
+        <div class="user-box__info">
+          <p class="user-box__info__name">
+            <i class="fa-crown" ranking="2"></i>
+            {{ $users[1]->name }}
+          </p>
+          <p class="user-box__info__desc">
+            {{ $users[1]->last_mounth_sales }} 円
+            /
+            {{ $users[1]->last_mounth_pv }} pv
+          </p>
+        </div>
+      @endif
     </div>
 
     <div class="col-md-4 col-sm-6 col-12 user-box">
-      <img class="rounded-circle" src="{{ $users[0]->image->url }}" alt="" width="200px" height="200px">
+      @if(isset($users[0]))
+        <img class="rounded-circle" src="{{ $users[0]->image->url }}" alt="" width="200px" height="200px">
 
-      <div class="user-box__info">
-        <p class="user-box__info__name">
-          <i class="fa-crown" ranking="1"></i>
-          {{ $users[0]->name }}</p>
-        <p class="user-box__info__desc">
-          {{ $users[0]->last_mounth_sales }} 円
-          /
-          {{ $users[0]->last_mounth_pv }} pv
-        </p>
-      </div>
+        <div class="user-box__info">
+          <p class="user-box__info__name">
+            <i class="fa-crown" ranking="1"></i>
+            {{ $users[0]->name }}</p>
+          <p class="user-box__info__desc">
+            {{ $users[0]->last_mounth_sales }} 円
+            /
+            {{ $users[0]->last_mounth_pv }} pv
+          </p>
+        </div>
+      @endif
     </div>
 
     <div class="col-md-4 col-sm-6 col-12 user-box">
-      <img class="rounded-circle" src="{{ $users[2]->image->url }}" alt="" width="150px" height="150px">
+      @if(isset($users[2]))
+        <img class="rounded-circle" src="{{ $users[2]->image->url }}" alt="" width="150px" height="150px">
 
-      <div class="user-box__info">
-        <p class="user-box__info__name">
-          <i class="fa-crown" ranking="3"></i>
-          {{ $users[2]->name }}
-        </p>
-        <p class="user-box__info__desc">
-          {{ $users[2]->last_mounth_sales }} 円
-          /
-          {{ $users[2]->last_mounth_pv }} pv
-        </p>
-      </div>
+        <div class="user-box__info">
+          <p class="user-box__info__name">
+            <i class="fa-crown" ranking="3"></i>
+            {{ $users[2]->name }}
+          </p>
+          <p class="user-box__info__desc">
+            {{ $users[2]->last_mounth_sales }} 円
+            /
+            {{ $users[2]->last_mounth_pv }} pv
+          </p>
+        </div>
+      @endif
     </div>
 </div>
