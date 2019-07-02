@@ -58,6 +58,7 @@ class SocialController extends Controller
 
         //privider_idとemailですでに登録済みかチェック
         $provider = $this->socialProviderRepository->findSocialProvider($socialUser->getId());
+        // $socialUser->getNickname();
 
         if(!$provider) {
 

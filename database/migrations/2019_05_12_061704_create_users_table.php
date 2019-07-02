@@ -17,14 +17,15 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('image_id')->unsigned()->index()->nullable();
 
-            $table->string('name')->nullable();
             $table->string('email')->unique()->nullable();
+            $table->string('name')->nullable();
+            $table->string('description')->nullable();
 
             $table->bigInteger('last_mounth_sales')->nullable();
             $table->bigInteger('last_mounth_pv')->nullable();
 
             $table->string('blog_url')->nullable();
-            $table->string('tw_url')->nullable();
+            // $table->string('tw_url')->nullable();
 
             $table->boolean('ban')->nullable();
 
