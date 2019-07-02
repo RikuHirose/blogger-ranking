@@ -5,7 +5,7 @@
   input , textarea{
     width: 100%;
     height: 32px;
-    font-size: 11px;
+    font-size: 16px;
     border: 1px solid #ccc;
     cursor: pointer;
     position: relative;
@@ -20,7 +20,7 @@
     }
   }
   textarea {
-    min-height: 80px;
+    min-height: 180px;
   }
 
   label {
