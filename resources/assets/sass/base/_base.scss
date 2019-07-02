@@ -247,6 +247,11 @@ input[type="button"] {
     }
 }
 
+img {
+  &:hover {
+    opacity: .8;
+  }
+}
 
 @include max-screen($breakpoint-mobile) {
 

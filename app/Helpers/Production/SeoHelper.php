@@ -24,6 +24,32 @@ class SeoHelper implements SeoHelperInterface
         return $this->setSeoText($title, $keyWords, $description);
     }
 
+    // mypage & user
+    public function setUserShowSeo($model)
+    {
+        $appName      = config('app.name');
+        $title        = $model->name. '  |  ' .trans('seo.users.show.title');
+        $description  = $model->description;
+        $keyWords     = trans('seo.index.keywords');
+
+        $imageTwitter  = $model->image->url;
+        $imageFacebook = $model->image->url;
+
+        return $this->setSeo($title, $keyWords, $description, $imageFacebook, $imageTwitter);
+    }
+
+    // ranking
+    public function setRankingIndexSeo()
+    {
+        $title       = trans('seo.index.title');
+
+        $description = trans('seo.index.description');
+
+        $keyWords = trans('seo.index.keywords');
+
+        return $this->setSeoText($title, $keyWords, $description);
+    }
+
     // restaurants
     public function setRestaurantsIndexSeo()
     {

@@ -9,7 +9,9 @@
       <div class="p-index__search-form">
         <div class="col-md-12 mt-3 mb-5">
           <div class="mx-auto">
-            
+            <a href="{{ route('ranking.index') }}" class="">
+          <button class="m-btn">いますぐランキングを見る</button>
+        </a>
           </div>
         </div>
       </div>
@@ -33,10 +35,10 @@
                       </span>
                       <div class="">
                         <div class="card-ttl">
-                            ①デートにピッタリなお店がすぐ見つかる
+                            ①ブロガーとしてのランクがはっきり分かる
                         </div>
                         <p class="">
-                          今までのグルメサイトはお店が多すぎました。{{ Config::get('app.name') }}ではデートにピッタリなお店のみを掲載しています。
+                          駆け出しブロガーは今まで孤独でした。{{ Config::get('app.name') }}ではあなたのブロガーとしてのランクがはっきり分かります。
                         </p>
                       </div>
                     </div>

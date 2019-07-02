@@ -10,6 +10,7 @@ class ImageHelper implements ImageHelperInterface
     ) {
     }
 
+
     public function getFirstImageForRestaurant($restaurant)
     {
         if (isset($restaurant->restaurantImages[0])) {

@@ -16,16 +16,18 @@
       <!-- content -->
       <div class="col-md-9">
 
-        <div class="w-100">
-          <div class="c-ranking-box card-body">
-            <span class="period">
-              {{ date('Y年m月d日', strtotime('first day of previous month')) }} ~ {{ date('Y年m月d日', strtotime('last day of previous month')) }}
-            </span>
-            <p class="rank">
-              {{ $rank }}位 / {{ $count }}位
-            </p>
+        @if(isset($rank))
+          <div class="w-100">
+            <div class="c-ranking-box card-body">
+              <span class="period">
+                {{ date('Y年m月d日', strtotime('first day of previous month')) }} ~ {{ date('Y年m月d日', strtotime('last day of previous month')) }}
+              </span>
+              <p class="rank">
+                {{ $rank }}位 / {{ $count }}位
+              </p>
+            </div>
           </div>
-        </div>
+        @endif
 
         <table class="table table-borderless">
           <tbody>

@@ -188,6 +188,14 @@
     }
   }
 
+  &-lightbulb {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-lightbulb;
+      font-weight: 600;
+    }
+  }
+
   &-crown {
     &::before {
       font-family: $_fontawesome;
