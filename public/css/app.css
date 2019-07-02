@@ -10917,6 +10917,10 @@ input[type=button]::focus {
   outline-offset: -2px;
 }
 
+img:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 640px) {
   input[type=text] {
     font-size: 16px;
@@ -11780,6 +11784,12 @@ a.m-btn {
 .fa-facebook::before {
   font-family: "Font Awesome 5 Brands";
   content: "\F39E";
+  font-weight: 600;
+}
+
+.fa-lightbulb::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F0EB";
   font-weight: 600;
 }
 

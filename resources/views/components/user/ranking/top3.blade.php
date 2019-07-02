@@ -20,18 +20,20 @@
 
     <div class="col-md-4 col-sm-6 col-12 user-box">
       @if(isset($users[0]))
-        <img class="rounded-circle" src="{{ $users[0]->image->url }}" alt="" width="200px" height="200px">
+        <a href="{{ route('users.show', $users[0]->id) }}">
+          <img class="rounded-circle" src="{{ $users[0]->image->url }}" alt="" width="200px" height="200px">
 
-        <div class="user-box__info">
-          <p class="user-box__info__name">
-            <i class="fa-crown" ranking="1"></i>
-            {{ $users[0]->name }}</p>
-          <p class="user-box__info__desc">
-            {{ $users[0]->last_mounth_sales }} 円
-            /
-            {{ $users[0]->last_mounth_pv }} pv
-          </p>
-        </div>
+          <div class="user-box__info">
+            <p class="user-box__info__name">
+              <i class="fa-crown" ranking="1"></i>
+              {{ $users[0]->name }}</p>
+            <p class="user-box__info__desc">
+              {{ $users[0]->last_mounth_sales }} 円
+              /
+              {{ $users[0]->last_mounth_pv }} pv
+            </p>
+          </div>
+        </a>
       @endif
     </div>
 

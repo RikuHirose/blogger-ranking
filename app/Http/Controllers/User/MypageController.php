@@ -58,9 +58,11 @@ class MypageController extends Controller
 
         $count = count($this->userRepository->getAllUsers());
 
+        \SeoHelper::setUserShowSeo(\Auth::user());
+
         return view('pages.mypage.show',
             [
-                'rank'  => $rank->rank,
+                'rank'  => is_null($rank) ? null : $rank->rank,
                 'count' => $count
             ]
         );

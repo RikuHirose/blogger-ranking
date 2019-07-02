@@ -36,11 +36,6 @@ Route::group(['middleware' => ['auth']], function ()
 
   // });
 
-  // users
-  Route::group(['prefix' => 'users/', 'as' => 'users.'], function () {
-      Route::get('/{user}', 'User\UserController@show')->name('show');
-  });
-
   // mypage
   Route::group(['prefix' => 'mypage/', 'as' => 'mypage.'], function () {
       Route::get('/', 'User\MypageController@show')->name('show');
@@ -66,6 +61,11 @@ Route::get('/', 'User\IndexController@index')->name('index');
 Route::group(['prefix' => 'ranking', 'as' => 'ranking.'], function () {
   Route::get('/', 'User\RankingController@index')->name('index');
 });
+
+// users
+  Route::group(['prefix' => 'users/', 'as' => 'users.'], function () {
+      Route::get('/{user}', 'User\UserController@show')->name('show');
+  });
 
 // restaurants
 // Route::resource('restaurants', 'User\RestaurantController', ['only' => ['index', 'show']]);
