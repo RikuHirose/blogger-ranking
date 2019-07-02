@@ -32,8 +32,8 @@ class SeoHelper implements SeoHelperInterface
         $description  = $model->description;
         $keyWords     = trans('seo.index.keywords');
 
-        $imageTwitter  = config('app.url').'/images/logo.jpg';
-        $imageFacebook = config('app.url').'/images/logo.jpg';
+        $imageTwitter  = config('app.url').'images/logo.jpg';
+        $imageFacebook = config('app.url').'images/logo.jpg';
 
         return $this->setSeo($title, $keyWords, $description, $imageFacebook, $imageTwitter);
     }
