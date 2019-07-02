@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
 
             $table->boolean('ban')->nullable();
 
+            $table->boolean('first_login');
+
             $table->rememberToken();
 
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');

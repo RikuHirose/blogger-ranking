@@ -40,6 +40,8 @@ Vue.component('swiper-my-pagination', require('./components/swiperMyPagination.v
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
 Vue.component('header-right-list-sp', require('./components/headerRightListSp.vue').default)
 
+Vue.component('judge-first-login', require('./components/judgeFirstLogin.vue').default)
+
 Vue.component('twitter-share', require('./components/twitterShare.vue').default)
 
 /* ============================================================================

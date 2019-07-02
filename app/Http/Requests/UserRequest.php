@@ -24,12 +24,12 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'        => 'string|max:255',
-            'email'       => 'string|email|max:255',
-            'sales'       => 'integer|max:255',
-            'pv'          => 'integer|max:255',
-            'blog_url'    => 'string|max:255',
-            'tw_url'      => 'string|max:255',
+            'name'              => 'string|max:255',
+            'email'             => 'string|email|max:255',
+            'last_mounth_sales' => 'numeric|max:10',
+            'last_mounth_pv'    => 'numeric|max:10',
+            'blog_url'          => 'string|max:255|nullable',
+            'first_login'       => 'boolean',
         ];
     }
 

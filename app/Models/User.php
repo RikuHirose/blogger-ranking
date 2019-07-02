@@ -23,7 +23,8 @@ class User extends Authenticatable
         'last_mounth_sales',
         'last_mounth_pv',
         'blog_url',
-        'ban'
+        'ban',
+        'first_login'
     ];
 
     /**

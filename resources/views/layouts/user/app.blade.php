@@ -2,14 +2,15 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141948099-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143151707-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-141948099-1');
+      gtag('config', 'UA-143151707-1');
     </script>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,6 +47,12 @@
 
             @include('shared.user.footer')
         @endif
+
+        @auth
+            <judge-first-login
+            :user="{{ json_encode($currentUser) }}"
+            :last-mounth="{{ json_encode(date('Y年m月', strtotime('first day of previous month'))) }}"></judge-first-login>
+        @endauth
 
         <modals-container />
     </div>

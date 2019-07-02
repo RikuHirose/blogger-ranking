@@ -69,14 +69,27 @@ class SocialController extends Controller
                 ]
             );
 
-            $user = User::firstOrCreate(
-                [
-                    'name'        => $socialUser->getName(),
-                    'email'       => $socialUser->getEmail(),
-                    'image_id'    => $user_image->id,
-                    'description' => $socialUser->user['description']
-                ]
-            );
+            if ($providerName == 'facebook') {
+              $user = User::firstOrCreate(
+                  [
+                      'name'        => $socialUser->getName(),
+                      'email'       => $socialUser->getEmail(),
+                      'image_id'    => $user_image->id,
+                      'first_login' => true
+                  ]
+              );
+
+            } else if ($providerName == 'twitter') {
+              $user = User::firstOrCreate(
+                  [
+                      'name'        => $socialUser->getName(),
+                      'email'       => $socialUser->getEmail(),
+                      'image_id'    => $user_image->id,
+                      'description' => $socialUser->user['description'],
+                      'first_login' => true
+                  ]
+              );
+            }
 
             SocialProvider::firstOrCreate(
                 [
@@ -95,6 +108,10 @@ class SocialController extends Controller
             $user = User::where(
                 ['id' => $provider->user_id]
             )->first();
+
+            $user->fill([
+              'first_login' => false
+            ])->save();
         }
 
         auth()->login($user);
