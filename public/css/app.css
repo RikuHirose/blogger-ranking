@@ -10922,7 +10922,7 @@ img:hover {
 }
 
 @media screen and (max-width: 640px) {
-  input[type=text] {
+  input {
     font-size: 16px;
     border: none;
     border-radius: 0;
@@ -11333,6 +11333,7 @@ img:hover {
   background-color: #4285f4;
   color: #fff;
   width: 50%;
+  margin-bottom: 16px;
   height: 136px;
   padding: 1.25rem;
 }
@@ -11376,6 +11377,14 @@ img:hover {
 
 .c-sidebar-res-show .active-item {
   font-weight: 600;
+}
+
+/* ----------------------------------------------------------------------------
+ * c-users-table
+ * ------------------------------------------------------------------------- */
+
+.c-users-table th {
+  min-width: 100px;
 }
 
 /* ============================================================================

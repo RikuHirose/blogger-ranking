@@ -1,4 +1,4 @@
-<table class="table table-borderless">
+<table class="table table-borderless c-users-table">
   <tbody>
     <tr>
       <th scope="row">プロフィール写真</th>

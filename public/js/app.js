@@ -50359,6 +50359,18 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "m-btn w-100 mb-3",
+            attrs: { href: "/auth/login/facebook", "btn-type": "facebook" }
+          },
+          [
+            _c("i", { staticClass: "fa-facebook fa-fw" }),
+            _vm._v("\n        FaceBookでログインする\n      ")
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "m-btn w-100 mb-3",
             attrs: { href: "/auth/login/twitter", "btn-type": "twitter" }
           },
           [

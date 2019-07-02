@@ -255,7 +255,7 @@ img {
 
 @include max-screen($breakpoint-mobile) {
 
-  input[type=text] {
+  input {
     font-size: 16px;
     border: none;
     border-radius: 0;
