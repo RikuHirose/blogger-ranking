@@ -76,7 +76,8 @@ class MypageController extends Controller
         );
     }
 
-    public function update(UserRequest $request)
+    // public function update(UserRequest $request)
+    public function update(Request $request)
     {
         $input = $request->only($this->userRepository->getBlankModel()->getFillable());
 
