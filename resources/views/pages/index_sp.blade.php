@@ -107,9 +107,16 @@
                   <div class="col-md-12 col-12">
                       <div class="text-center p-index__message--wrap">
                         <p class="">ブロガー仲間と切磋琢磨しよう</p>
-                        <button class="m-btn">
-                          <a href="#p-index" class="" v-smooth-scroll>いますぐランキングを見る</a>
-                        </button>
+                        @auth
+                          <a href="{{ route('ranking.index') }}" class="">
+                            <button class="m-btn">いますぐランキングを見る</button>
+                          </a>
+                        @endauth
+
+                        @guest
+                        <login-button
+                        :redirect-url="{{ json_encode(url()->full()) }}"></login-button>
+                        @endguest
                       </div>
                   </div>
               </div>

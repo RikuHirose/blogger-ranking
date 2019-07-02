@@ -54,6 +54,11 @@ Vue.component('search-restaurants-suggest', require('./components/input/searchRe
  * ========================================================================= */
 
 /* ============================================================================
+ * button
+ * ========================================================================= */
+Vue.component('login-button', require('./components/button/loginButton.vue').default)
+
+/* ============================================================================
  * restaurants
  * ========================================================================= */
 Vue.component('favorite-restaurant', require('./components/restaurants/favoriteRestaurant.vue').default)
