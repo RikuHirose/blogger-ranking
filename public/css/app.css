@@ -11811,6 +11811,12 @@ a.m-btn {
   font-weight: 600;
 }
 
+.fa-thumbs-up::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F164";
+  font-weight: 600;
+}
+
 .fa-crown::before {
   font-family: "Font Awesome 5 Free";
   content: "\F521";
@@ -12496,11 +12502,12 @@ a.m-btn {
 
   .p-index--copy {
     font-size: 25px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
   }
 
   .p-index__image {
     padding: 64px 0 40px 0;
+    height: 304px;
   }
 
   .p-index .c-res-reco-card__ttl {

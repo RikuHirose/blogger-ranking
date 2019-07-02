@@ -49,4 +49,10 @@ class UrlHelper implements UrlHelperInterface
         return $url;
     }
 
+    public function getTwitterUrl($user)
+    {
+        $url = 'https://twitter.com/'.$user->socialProvider->provider_id;
+        return $url;
+    }
+
 }

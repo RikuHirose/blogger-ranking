@@ -44,7 +44,7 @@
         Twitter
       </th>
       <td>
-        <a href="{{ $user->tw_url }}">{{ $user->tw_url }}</a>
+        <a href="{{ \UrlHelper::getTwitterUrl($user) }}">{{ \UrlHelper::getTwitterUrl($user) }}</a>
       </td>
     </tr>
   </tbody>

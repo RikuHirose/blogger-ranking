@@ -53,7 +53,7 @@ class UserController extends Controller
                 )
             )
             ->whereNotNull('a.last_mounth_sales')
-            ->where('id', \Auth::user()->id)
+            ->where('id', $user->id)
             ->orderBy('rank', 'ASC')
         ->first();
 

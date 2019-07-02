@@ -196,6 +196,14 @@
     }
   }
 
+  &-thumbs-up {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-thumbs-up;
+      font-weight: 600;
+    }
+  }
+
   &-crown {
     &::before {
       font-family: $_fontawesome;

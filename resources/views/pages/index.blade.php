@@ -4,7 +4,7 @@
   <div id="p-index" class="p-index">
     <!-- p-index--image -->
     <div class="p-index__image">
-      <p class="p-index--copy">トップブロガーになろう</p>
+      <p class="p-index--copy">ブロガーのがんばりが認められるプラットフォーム</p>
       <div class="p-index__search-form text-center">
         <a href="{{ route('ranking.index') }}" class="">
           <button class="m-btn" style="width: 280px; height: 60px;">いますぐランキングを見る</button>
@@ -21,9 +21,9 @@
                         {{ Config::get('app.name') }}とは
                     </h2>
                 </div>
-                <p class="text-center h2-desc">あなたのブロガーとしてのランクがはっきり分かるサービスです</p>
+                <p class="text-center h2-desc">あなたのブロガーとしてのがんばりが認められるサービスです</p>
                 <div class="row mb-3 mt-3">
-                    <div class="col-md-6 col-sm-6 col-12">
+                    <div class="col-md-4 col-sm-6 col-12">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-crown fa-white"></i>
@@ -38,7 +38,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12">
+                    <div class="col-md-4 col-sm-6 col-12">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-lightbulb fa-white"></i>
@@ -53,20 +53,20 @@
                       </div>
                     </div>
 
-                    <!-- <div class="col-md-4 col-sm-6 col-12">
+                    <div class="col-md-4 col-sm-6 col-12">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
-                        <i class="fa-wink fa-white"></i>
+                        <i class="fa-thumbs-up fa-white"></i>
                       </span>
                       <div class="">
                           <div class="card-ttl">
-                            ③もう迷わない
+                            ③あなたのがんばりがランキングに直結します
                           </div>
                           <p class="">
-                            
+                            頑張ってブロガーランクを上げよう!!
                           </p>
                       </div>
-                    </div> -->
+                    </div>
                 </div>
               </div>
           </div>
@@ -100,7 +100,7 @@
               <div class="row">
                   <div class="col-md-12 col-12">
                       <div class="text-center p-index__message--wrap">
-                        <!-- <p class="">デートにピッタリなお店を見つけよう</p> -->
+                        <p class="">ブロガー仲間と切磋琢磨しよう</p>
                         <a href="#p-index" class="" v-smooth-scroll>
                           <button class="m-btn">いますぐランキングを見る</button>
                         </a>

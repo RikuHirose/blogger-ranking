@@ -5,7 +5,7 @@
   <div id="p-index" class="p-index p-index-sp">
     <!-- p-index--image -->
     <div class="p-index__image">
-      <p class="p-index--copy">デートにピッタリなお店を見つけよう</p>
+      <p class="p-index--copy">ブロガーのがんばりが認められるプラットフォーム</p>
       <div class="p-index__search-form">
         <div class="col-md-12 mt-3 mb-5">
           <div class="mx-auto text-center">
@@ -26,7 +26,7 @@
                         {{ Config::get('app.name') }}とは
                     </h2>
                 </div>
-                <p class="text-center h2-desc">あなたのブロガーとしてのランクがはっきり分かるサービスです</p>
+                <p class="text-center h2-desc">あなたのブロガーとしてのがんばりが認められるサービスです</p>
                 <div class="row mb-3">
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
@@ -58,20 +58,20 @@
                       </div>
                     </div>
 
-                    <!-- <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
-                        <i class="fa-wink fa-white"></i>
+                        <i class="fa-thumbs-up fa-white"></i>
                       </span>
                       <div class="">
                           <div class="card-ttl">
-                            ③もう迷わない
+                            ③あなたのがんばりがランキングに直結します
                           </div>
                           <p class="">
-                            シンプルなデザインでサクサクと検索できるので、もうお店選びで迷うことはありません。
+                            頑張ってブロガーランクを上げよう!!
                           </p>
                       </div>
-                    </div> -->
+                    </div>
                 </div>
               </div>
           </div>
@@ -106,9 +106,9 @@
               <div class="row">
                   <div class="col-md-12 col-12">
                       <div class="text-center p-index__message--wrap">
-                        <p class="">デートにピッタリなお店を見つけよう</p>
+                        <p class="">ブロガー仲間と切磋琢磨しよう</p>
                         <button class="m-btn">
-                          <a href="#p-index" class="" v-smooth-scroll>いますぐお店を見つける</a>
+                          <a href="#p-index" class="" v-smooth-scroll>いますぐランキングを見る</a>
                         </button>
                       </div>
                   </div>
