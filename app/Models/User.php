@@ -19,10 +19,10 @@ class User extends Authenticatable
         'image_id',
         'name',
         'email',
+        'description',
         'last_mounth_sales',
         'last_mounth_pv',
         'blog_url',
-        'tw_url',
         'ban'
     ];
 
