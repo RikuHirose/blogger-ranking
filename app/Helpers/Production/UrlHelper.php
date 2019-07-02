@@ -43,7 +43,7 @@ class UrlHelper implements UrlHelperInterface
 
     public function getTwitterShareUrl($user, $rank, $count)
     {
-        $txt = $user->name."さんのブロガー順位は".$rank."位 / ".$count."位です";
+        $txt = $user->name."さんのブロガー順位は".$rank."位 / ".$count."です";
         $url = "https://twitter.com/share?ref_src=twsrc%5Etfw&text=".$txt;
 
         return $url;
