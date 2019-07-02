@@ -5,7 +5,7 @@
   <div id="p-index" class="p-index p-index-sp">
     <!-- p-index--image -->
     <div class="p-index__image">
-      <p class="p-index--copy">ブロガーのがんばりが認められるプラットフォーム</p>
+      <p class="p-index--copy">ブロガーのがんばりが<br>認められるプラットフォーム</p>
       <div class="p-index__search-form">
         <div class="col-md-12 mt-3 mb-5">
           <div class="mx-auto text-center">
