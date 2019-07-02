@@ -2276,6 +2276,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: {
@@ -50122,106 +50127,144 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "m-modal__content" }, [
       _c("div", { staticClass: "social-content" }, [
-        _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v(_vm._s(_vm.lastMounth) + "の売り上げ")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.userForm.last_mounth_sales,
-                expression: "userForm.last_mounth_sales"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "number", required: "" },
-            domProps: { value: _vm.userForm.last_mounth_sales },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.userForm, "last_mounth_sales", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.submitForm($event)
               }
             }
-          }),
-          _vm._v("円\n      ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v(_vm._s(_vm.lastMounth) + "のPV")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.userForm.last_mounth_pv,
-                expression: "userForm.last_mounth_pv"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "number", required: "" },
-            domProps: { value: _vm.userForm.last_mounth_pv },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          },
+          [
+            _c("div", { staticClass: "m-frmTextbox" }, [
+              _c("label", [_vm._v(_vm._s(_vm.lastMounth) + "の売り上げ")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.userForm.last_mounth_sales,
+                    expression: "userForm.last_mounth_sales"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number", required: "" },
+                domProps: { value: _vm.userForm.last_mounth_sales },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.userForm,
+                      "last_mounth_sales",
+                      $event.target.value
+                    )
+                  }
                 }
-                _vm.$set(_vm.userForm, "last_mounth_pv", $event.target.value)
-              }
-            }
-          }),
-          _vm._v("pv\n      ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("ブログURL")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.userForm.blog_url,
-                expression: "userForm.blog_url"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "texrt", required: "" },
-            domProps: { value: _vm.userForm.blog_url },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+              }),
+              _vm._v("円\n        ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "m-frmTextbox" }, [
+              _c("label", [_vm._v(_vm._s(_vm.lastMounth) + "のPV")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.userForm.last_mounth_pv,
+                    expression: "userForm.last_mounth_pv"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number", required: "" },
+                domProps: { value: _vm.userForm.last_mounth_pv },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.userForm,
+                      "last_mounth_pv",
+                      $event.target.value
+                    )
+                  }
                 }
-                _vm.$set(_vm.userForm, "blog_url", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "text-center" }, [
-          _c(
-            "button",
-            {
-              staticClass: "m-btn",
-              attrs: { type: "submit", "btn-type": "primary" },
-              on: {
-                click: function($event) {
-                  return _vm.submitForm()
+              }),
+              _vm._v("pv\n        ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "m-frmTextbox" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.userForm.blog_url,
+                    expression: "userForm.blog_url"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "url",
+                  placeholder: "https://example.com",
+                  required: ""
+                },
+                domProps: { value: _vm.userForm.blog_url },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.userForm, "blog_url", $event.target.value)
+                  }
                 }
-              }
-            },
-            [_vm._v("\n          記入する\n        ")]
-          )
-        ])
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ]
+        )
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _vm._v("\n            ブログURL\n            "),
+      _c("span", { staticClass: "small caution" }, [
+        _vm._v("urlはhttpsから始めてください")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c(
+        "button",
+        {
+          staticClass: "m-btn",
+          attrs: { type: "submit", "btn-type": "primary" }
+        },
+        [_vm._v("\n            記入する\n          ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -50355,18 +50398,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "m-modal__content" }, [
       _c("div", { staticClass: "social-content" }, [
-        _c(
-          "a",
-          {
-            staticClass: "m-btn w-100 mb-3",
-            attrs: { href: "/auth/login/facebook", "btn-type": "facebook" }
-          },
-          [
-            _c("i", { staticClass: "fa-facebook fa-fw" }),
-            _vm._v("\n        FaceBookでログインする\n      ")
-          ]
-        ),
-        _vm._v(" "),
         _c(
           "a",
           {

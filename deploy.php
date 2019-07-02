@@ -48,5 +48,5 @@ after('deploy:failed', 'deploy:unlock');
 // Migrate database before symlink new release.
 // before('deploy:symlink', 'artisan:migrate');
 // before('deploy:symlink', 'artisan:admin:install');
-before('deploy:symlink', 'artisan:db:seed');
+// before('deploy:symlink', 'artisan:db:seed');
  // php ./vendor/bin/dep deploy production

@@ -22,6 +22,7 @@
     <div class="col-md-4 col-sm-6 col-12 user-box">
 
       @if(isset($users[1]))
+      <a href="{{ route('users.show', $users[1]->id) }}">
         <img class="rounded-circle" src="{{ $users[1]->image->url }}" alt="" width="150px" height="150px">
 
         <div class="user-box__info">
@@ -35,11 +36,13 @@
             {{ $users[1]->last_mounth_pv }} pv
           </p>
         </div>
+      </a>
       @endif
     </div>
 
     <div class="col-md-4 col-sm-6 col-12 user-box">
       @if(isset($users[2]))
+      <a href="{{ route('users.show', $users[2]->id) }}">
         <img class="rounded-circle" src="{{ $users[2]->image->url }}" alt="" width="150px" height="150px">
 
         <div class="user-box__info">
@@ -53,6 +56,7 @@
             {{ $users[2]->last_mounth_pv }} pv
           </p>
         </div>
+      </a>
       @endif
     </div>
 </div>

@@ -21,7 +21,7 @@
                 {{ date('Y年m月d日', strtotime('first day of previous month')) }} ~ {{ date('Y年m月d日', strtotime('last day of previous month')) }}
               </span>
               <p class="rank">
-                {{ $rank }}位 / {{ $count }}位
+                {{ $rank }}位 / {{ $count }}人
               </p>
             </div>
             <div style="text-align: right; margin-top: 16px;">

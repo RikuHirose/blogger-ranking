@@ -13,40 +13,45 @@
     </div>
     <div class="m-modal__content">
       <div class="social-content">
-        <div class="m-frmTextbox">
-          <label>{{ lastMounth }}の売り上げ</label>
-          <input
-            v-model="userForm.last_mounth_sales"
-            type="number"
-            class="form-control"
-            required>円
-        </div>
-        <div class="m-frmTextbox">
-          <label>{{ lastMounth }}のPV</label>
-          <input
-            v-model="userForm.last_mounth_pv"
-            type="number"
-            class="form-control"
-            required>pv
-        </div>
-        <div class="m-frmTextbox">
-          <label>ブログURL</label>
-          <input
-            v-model="userForm.blog_url"
-            type="texrt"
-            class="form-control"
-            required>
-        </div>
-        <div
-          class="text-center">
-          <button
-            type="submit"
-            class="m-btn"
-            btn-type="primary"
-            @click="submitForm()">
-            記入する
-          </button>
-        </div>
+        <form @submit.prevent="submitForm">
+          <div class="m-frmTextbox">
+            <label>{{ lastMounth }}の売り上げ</label>
+            <input
+              v-model="userForm.last_mounth_sales"
+              type="number"
+              class="form-control"
+              required>円
+          </div>
+          <div class="m-frmTextbox">
+            <label>{{ lastMounth }}のPV</label>
+            <input
+              v-model="userForm.last_mounth_pv"
+              type="number"
+              class="form-control"
+              required>pv
+          </div>
+          <div class="m-frmTextbox">
+            <label>
+              ブログURL
+              <span class="small caution">urlはhttpsから始めてください</span>
+            </label>
+            <input
+              v-model="userForm.blog_url"
+              type="url"
+              class="form-control"
+              placeholder="https://example.com"
+              required>
+          </div>
+          <div
+            class="text-center">
+            <button
+              type="submit"
+              class="m-btn"
+              btn-type="primary">
+              記入する
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
