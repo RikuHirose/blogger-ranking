@@ -24,7 +24,8 @@ class User extends Authenticatable
         'last_mounth_pv',
         'blog_url',
         'ban',
-        'first_login'
+        'first_login',
+        'tw_url'
     ];
 
     /**

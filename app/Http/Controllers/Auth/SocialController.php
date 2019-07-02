@@ -56,8 +56,8 @@ class SocialController extends Controller
             return redirect("/");
         }
 
-        //privider_idとemailですでに登録済みかチェック
-        $provider = $this->socialProviderRepository->findSocialProvider($socialUser->getNickname());
+        //privider_idですでに登録済みかチェック
+        $provider = $this->socialProviderRepository->findSocialProvider($socialUser->getId());
         // $socialUser->getNickname();
 
         if(!$provider) {
@@ -86,6 +86,7 @@ class SocialController extends Controller
                       'email'       => $socialUser->getEmail(),
                       'image_id'    => $user_image->id,
                       'description' => $socialUser->user['description'],
+                      'tw_url'      => \UrlHelper::getTwitterUrl($socialUser->getNickname())
                       'first_login' => true
                   ]
               );
@@ -94,7 +95,7 @@ class SocialController extends Controller
             SocialProvider::firstOrCreate(
                 [
                       'user_id'     => $user->id,
-                      'provider_id' => $socialUser->getNickname(),
+                      'provider_id' => $socialUser->getId(),
                       'provider'    => $providerName
                 ]
             );

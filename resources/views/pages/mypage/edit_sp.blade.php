@@ -56,7 +56,7 @@
 
             <div class="m-frmTextbox">
               <label>Twitter</label>
-              <input type="text" class="form-control" name="tw_url" value="{{ $currentUser->tw_url }}" required>
+              <input type="url" class="form-control" name="tw_url" value="{{ $currentUser->tw_url }}" required>
             </div>
 
             <div class="text-center">

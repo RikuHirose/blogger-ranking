@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('last_mounth_pv')->nullable()->default(0);
 
             $table->string('blog_url')->nullable();
-            // $table->string('tw_url')->nullable();
+            $table->string('tw_url')->nullable();
 
             $table->boolean('ban')->nullable();
 
