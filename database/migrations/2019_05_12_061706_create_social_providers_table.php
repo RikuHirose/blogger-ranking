@@ -17,7 +17,7 @@ class CreateSocialProvidersTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unique()->unsigned()->index();
 
-            $table->string('provider_id')->nullable();
+            $table->string('provider_id')->unique()->nullable();
             $table->string('provider')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
