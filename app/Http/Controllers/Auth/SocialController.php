@@ -55,9 +55,9 @@ class SocialController extends Controller
         } catch(Exception $e){
             return redirect("/");
         }
-
+        dd($socialUser);
         //privider_idとemailですでに登録済みかチェック
-        $provider = $this->socialProviderRepository->findSocialProvider($socialUser->getId());
+        $provider = $this->socialProviderRepository->findSocialProvider($socialUser->getNickname());
         // $socialUser->getNickname();
 
         if(!$provider) {
@@ -80,7 +80,7 @@ class SocialController extends Controller
             SocialProvider::firstOrCreate(
                 [
                       'user_id'     => $user->id,
-                      'provider_id' => $socialUser->getId(),
+                      'provider_id' => $socialUser->getNickname(),
                       'provider'    => $providerName
                 ]
             );
