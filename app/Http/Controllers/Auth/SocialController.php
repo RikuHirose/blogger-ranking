@@ -86,7 +86,7 @@ class SocialController extends Controller
                       'email'       => $socialUser->getEmail(),
                       'image_id'    => $user_image->id,
                       'description' => $socialUser->user['description'],
-                      'tw_url'      => \UrlHelper::getTwitterUrl($socialUser->getNickname())
+                      'tw_url'      => \UrlHelper::getTwitterUrl($socialUser->getNickname()),
                       'first_login' => true
                   ]
               );
