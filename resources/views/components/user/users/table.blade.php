@@ -35,7 +35,7 @@
     <tr>
       <th scope="row">ブログ</th>
       <td>
-        <a href="{{ $user->blog_url }}">{{ $user->blog_url }}</a>
+        <a href="{{ $user->blog_url }}" target="_blank">{{ $user->blog_url }}</a>
       </td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
         Twitter
       </th>
       <td>
-        <a href="{{ \UrlHelper::getTwitterUrl($user) }}">{{ \UrlHelper::getTwitterUrl($user) }}</a>
+        <a href="{{ \UrlHelper::getTwitterUrl($user) }}" target="_blank">{{ \UrlHelper::getTwitterUrl($user) }}</a>
       </td>
     </tr>
   </tbody>
