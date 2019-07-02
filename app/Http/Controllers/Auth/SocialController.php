@@ -59,7 +59,7 @@ class SocialController extends Controller
         //privider_idとemailですでに登録済みかチェック
         $provider = $this->socialProviderRepository->findSocialProvider($socialUser->getNickname());
         // $socialUser->getNickname();
-        dd($socialUser->user, $socialUser->user['description']);
+
         if(!$provider) {
 
           try {
@@ -74,7 +74,7 @@ class SocialController extends Controller
                     'name'        => $socialUser->getName(),
                     'email'       => $socialUser->getEmail(),
                     'image_id'    => $user_image->id,
-                    'description' => $socialUser->user->description
+                    'description' => $socialUser->user['description']
                 ]
             );
 
