@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();
             $table->string('description')->nullable();
 
-            $table->bigInteger('last_mounth_sales')->nullable();
-            $table->bigInteger('last_mounth_pv')->nullable();
+            $table->bigInteger('last_mounth_sales')->nullable()->default(0);
+            $table->bigInteger('last_mounth_pv')->nullable()->default(0);
 
             $table->string('blog_url')->nullable();
             // $table->string('tw_url')->nullable();

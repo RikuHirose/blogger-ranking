@@ -2,7 +2,7 @@
  * Form
  * ------------------------------------------------------------------------- */
  .m-frmTextbox {
-  input {
+  input , textarea{
     width: 100%;
     height: 32px;
     font-size: 11px;
@@ -13,7 +13,16 @@
     // z-index: 99;
     margin-bottom: 20px;
     box-sizing: border-box;
+    &[type="number"] {
+      width: 60%;
+      display: inline-block;
+      margin-right: 8px;
+    }
   }
+  textarea {
+    min-height: 80px;
+  }
+
   label {
     border-bottom: 1px solid #CCCCCC;
     display: block;

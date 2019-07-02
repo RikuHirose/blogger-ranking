@@ -49,4 +49,9 @@ class User extends Authenticatable
         return $this->belongsTo(\App\Models\Image::class, 'image_id', 'id');
     }
 
+    public function socialProvider()
+    {
+        return $this->belongsTo(\App\Models\SocialProvider::class, 'id', 'user_id');
+    }
+
 }

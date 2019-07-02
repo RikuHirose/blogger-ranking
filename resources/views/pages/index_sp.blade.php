@@ -8,10 +8,10 @@
       <p class="p-index--copy">デートにピッタリなお店を見つけよう</p>
       <div class="p-index__search-form">
         <div class="col-md-12 mt-3 mb-5">
-          <div class="mx-auto">
+          <div class="mx-auto text-center">
             <a href="{{ route('ranking.index') }}" class="">
-          <button class="m-btn">いますぐランキングを見る</button>
-        </a>
+              <button class="m-btn" style="width: 280px; height: 60px;">いますぐランキングを見る</button>
+            </a>
           </div>
         </div>
       </div>
@@ -26,16 +26,16 @@
                         {{ Config::get('app.name') }}とは
                     </h2>
                 </div>
-                <p class="text-center h2-desc">デートにピッタリなお店がすぐ見つかるサービスです</p>
+                <p class="text-center h2-desc">あなたのブロガーとしてのランクがはっきり分かるサービスです</p>
                 <div class="row mb-3">
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
-                        <i class="fa-eat fa-white"></i>
+                        <i class="fa-crown fa-white"></i>
                       </span>
                       <div class="">
                         <div class="card-ttl">
-                            ①ブロガーとしてのランクがはっきり分かる
+                            ①あなたのランクがはっきり分かる
                         </div>
                         <p class="">
                           駆け出しブロガーは今まで孤独でした。{{ Config::get('app.name') }}ではあなたのブロガーとしてのランクがはっきり分かります。
@@ -46,19 +46,19 @@
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
-                        <i class="fa-search fa-white"></i>
+                        <i class="fa-lightbulb fa-white"></i>
                       </span>
                       <div class="">
                           <div class="card-ttl">
-                              ②専門のスタッフがお店を厳選
+                              ②ライバルブロガーのランクがわかる
                           </div>
                           <p class="">
-                            食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたデートにピッタリなお店だけを掲載しています。
+                            順位の可視化することで、ライバルのブロガーと競争できます。
                           </p>
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <!-- <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-wink fa-white"></i>
@@ -71,12 +71,34 @@
                             シンプルなデザインでサクサクと検索できるので、もうお店選びで迷うことはありません。
                           </p>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
               </div>
           </div>
       </div>
     </section>
+
+     <!-- p-index--top3-blogger -->
+    @if(!is_null($top3Users))
+      <section class="p-index__top3-blogger">
+        <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-12">
+                <div class="text-center">
+                    <h2 class="">
+                        トップのブロガー
+                    </h2>
+                </div>
+                <p class="text-center h2-desc"></p>
+              </div>
+          </div>
+          <!-- content -->
+          <div class="col-md-12 mt-3">
+            @include('components.user.ranking.top3Sp', ['users' => $top3Users])
+          </div>
+        </div>
+      </section>
+    @endif
 
      <!-- p-index--message -->
     <section class="p-index__message">

@@ -11179,6 +11179,7 @@ img:hover {
 .c-ranking-top3 .user-box {
   text-align: center;
   position: relative;
+  margin-bottom: 16px;
 }
 
 .c-ranking-top3 .user-box img {
@@ -11322,11 +11323,18 @@ img:hover {
  * ------------------------------------------------------------------------- */
 
 .c-ranking-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.c-ranking-box__box {
   background-color: #4285f4;
   color: #fff;
   width: 50%;
-  margin-bottom: 16px;
   height: 136px;
+  padding: 1.25rem;
 }
 
 .c-ranking-box .period {
@@ -11336,6 +11344,16 @@ img:hover {
 .c-ranking-box .rank {
   font-size: 24px;
   margin-top: 32px;
+}
+
+@media screen and (max-width: 640px) {
+  .c-ranking-box {
+    display: block;
+  }
+
+  .c-ranking-box__box {
+    width: 100%;
+  }
 }
 
 /* ----------------------------------------------------------------------------
@@ -11381,7 +11399,7 @@ img:hover {
   align-items: center;
   border-radius: 4px;
   border: none;
-  background: #4285f4;
+  background: #3b37af;
 }
 
 .m-btn a,
@@ -11815,7 +11833,8 @@ a.m-btn {
  * Form
  * ------------------------------------------------------------------------- */
 
-.m-frmTextbox input {
+.m-frmTextbox input,
+.m-frmTextbox textarea {
   width: 100%;
   height: 32px;
   font-size: 11px;
@@ -11824,6 +11843,17 @@ a.m-btn {
   position: relative;
   margin-bottom: 20px;
   box-sizing: border-box;
+}
+
+.m-frmTextbox input[type=number],
+.m-frmTextbox textarea[type=number] {
+  width: 60%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.m-frmTextbox textarea {
+  min-height: 80px;
 }
 
 .m-frmTextbox label {
@@ -12268,7 +12298,7 @@ a.m-btn {
 
 .p-index h2 {
   margin-bottom: 16px;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bolder;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
@@ -12466,6 +12496,7 @@ a.m-btn {
 
   .p-index--copy {
     font-size: 25px;
+    margin-bottom: 120px;
   }
 
   .p-index__image {

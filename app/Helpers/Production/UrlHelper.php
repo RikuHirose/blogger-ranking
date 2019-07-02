@@ -41,4 +41,12 @@ class UrlHelper implements UrlHelperInterface
         return url('/').$asset_path;
     }
 
+    public function getTwitterShareUrl($user, $rank, $count)
+    {
+        $txt = $user->name."さんのブロガー順位は".$rank."位 / ".$count."位です";
+        $url = "https://twitter.com/share?ref_src=twsrc%5Etfw&text=".$txt;
+
+        return $url;
+    }
+
 }

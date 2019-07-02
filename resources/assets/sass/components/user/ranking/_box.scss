@@ -3,11 +3,19 @@
  * ------------------------------------------------------------------------- */
 
  .c-ranking-box {
-  background-color: #4285f4;
-  color: $c-white;
-  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 16px;
-  height: 136px;
+
+  &__box {
+    background-color: #4285f4;
+    color: $c-white;
+    width: 50%;
+    // margin-bottom: 16px;
+    height: 136px;
+    padding: 1.25rem;
+  }
 
   .period {
     font-size: 12px;
@@ -15,5 +23,14 @@
   .rank {
     font-size: 24px;
     margin-top: 32px;
+  }
+ }
+
+ @include max-screen($breakpoint-mobile) {
+  .c-ranking-box {
+    display: block;
+     &__box {
+      width: 100%;
+     }
   }
  }

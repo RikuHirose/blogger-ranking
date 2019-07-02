@@ -12,8 +12,8 @@ return [
           'description' => 'ブロガーランキングの検索結果',
       ],
       'show' => [
-          'title'       => ':title - ブロガーランキング',
-          'description' => ':title ブロガーランキングの詳細ページ',
+          'title'       => ' ブロガーランキング',
+          'description' => ' ブロガーランキングの詳細ページ',
       ],
     ],
 ];

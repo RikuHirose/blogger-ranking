@@ -15,7 +15,7 @@ class UserComposer
         if (is_null($currentUser)) {
             $this->user = $currentUser;
         } else {
-            $this->user = $currentUser->load('image');
+            $this->user = $currentUser->load('image', 'socialProvider');
         }
     }
 

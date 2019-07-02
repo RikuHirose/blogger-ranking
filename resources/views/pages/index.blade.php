@@ -4,10 +4,10 @@
   <div id="p-index" class="p-index">
     <!-- p-index--image -->
     <div class="p-index__image">
-      <p class="p-index--copy">あなたのブロガーとしてのランク</p>
+      <p class="p-index--copy">トップブロガーになろう</p>
       <div class="p-index__search-form text-center">
         <a href="{{ route('ranking.index') }}" class="">
-          <button class="m-btn">いますぐランキングを見る</button>
+          <button class="m-btn" style="width: 280px; height: 60px;">いますぐランキングを見る</button>
         </a>
       </div>
     </div>
@@ -23,22 +23,22 @@
                 </div>
                 <p class="text-center h2-desc">あなたのブロガーとしてのランクがはっきり分かるサービスです</p>
                 <div class="row mb-3 mt-3">
-                    <div class="col-md-4 col-sm-6 col-12">
+                    <div class="col-md-6 col-sm-6 col-12">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-crown fa-white"></i>
                       </span>
                       <div class="">
                           <div class="card-ttl">
-                              ①ブロガーのランクがはっきり分かる
+                              ①あなたのランクがはっきり分かる
                           </div>
-                          <p class="">
+                          <p class="w-75 mx-auto">
                             駆け出しブロガーは今まで孤独でした。{{ Config::get('app.name') }}ではあなたのブロガーとしてのランクがはっきり分かります。
                           </p>
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-12">
+                    <div class="col-md-6 col-sm-6 col-12">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-lightbulb fa-white"></i>
@@ -47,13 +47,13 @@
                           <div class="card-ttl">
                               ②ライバルブロガーのランクがわかる
                           </div>
-                          <p class="">
+                          <p class="w-75 mx-auto">
                             順位の可視化することで、ライバルのブロガーと競争できます。
                           </p>
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-12">
+                    <!-- <div class="col-md-4 col-sm-6 col-12">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-wink fa-white"></i>
@@ -66,7 +66,7 @@
                             
                           </p>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
               </div>
           </div>

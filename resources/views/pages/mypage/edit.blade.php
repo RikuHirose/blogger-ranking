@@ -38,6 +38,11 @@
             </div>
 
             <div class="m-frmTextbox">
+              <label>概要</label>
+              <textarea type="text" name="description" class="form-control" rows="4" cols="40">{{ $currentUser->description }}</textarea>
+            </div>
+
+            <div class="m-frmTextbox">
               <label>{{ date('Y年m月', strtotime('first day of previous month')) }}の売り上げ</label>
               <input type="number" class="form-control" name="last_mounth_sales" value="{{ $currentUser->last_mounth_sales }}" required>円
             </div>
