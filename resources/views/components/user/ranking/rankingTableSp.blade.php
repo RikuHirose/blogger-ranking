@@ -53,7 +53,7 @@
             </p>
           </td>
           <td class="desc">
-            <a href="" class="m-btn">詳細</a>
+            <a href="{{ route('users.show', $user->id) }}" class="m-btn">詳細</a>
           </td>
         </tr>
       @endforeach
