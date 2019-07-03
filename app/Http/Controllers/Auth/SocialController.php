@@ -62,7 +62,7 @@ class SocialController extends Controller
 
         if(!$provider) {
 
-          $user = \DB::transaction(function () use ($socialUser) {
+          $user = \DB::transaction(function () use ($socialUser, $providerName) {
             $user_image = Image::firstOrCreate(
                 [
                     'url' => $socialUser->avatar_original
