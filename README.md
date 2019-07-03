@@ -1,4 +1,4 @@
-# Shunta Web App
+# blogger-ranking
 
 ## Descriptions
 
@@ -32,10 +32,3 @@ npm run dev
 ```
 npm run watch
 ```
-## admin
-1. Run `php artisan admin:install`
-2. Open `http://localhost/admin/` in browser, use username `admin` and password `admin` to login.
-
-for more detail
-read https://qiita.com/pikonori/items/a04066010e7380b3ee38
-     https://github.com/z-song/laravel-admin
