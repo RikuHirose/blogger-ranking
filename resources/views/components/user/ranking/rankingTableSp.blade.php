@@ -11,7 +11,7 @@
             <img class="rounded-circle" src="{{ $user->image->url }}" alt="" width="48px" height="48px">
           </td>
           <td class="info">
-            <p>
+            <p class="user-name">
               <i class="fa-crown" ranking="{{ $loop->iteration }}"></i>
               {{ $user->name }}
             </p>
@@ -45,7 +45,7 @@
             <img class="rounded-circle" src="{{ $user->image->url }}" alt="" width="48px" height="48px">
           </td>
           <td class="info">
-            <p>{{ $user->name }}</p>
+            <p class="user-name">{{ $user->name }}</p>
             <p>
               {{ $user->last_mounth_sales }} 円
               /

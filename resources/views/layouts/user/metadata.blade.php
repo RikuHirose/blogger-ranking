@@ -3,6 +3,7 @@
 {!! Twitter::generate(true) !!}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
 
 <!-- ファビコン -->
 <link rel="icon" href="{{ asset('/images/favicon.ico') }}">
