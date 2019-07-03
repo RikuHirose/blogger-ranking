@@ -83,8 +83,8 @@ class SeoHelper implements SeoHelperInterface
         $description = trans('seo.index.description');
 
         $keyWords        = trans('seo.index.keywords');
-        $imageTwitter    = config('app.url').'/images/logo.jpg';
-        $imageFacebook   = config('app.url').'/images/logo.jpg';
+        $imageTwitter    = config('app.url').'/images/logo-ogp.jpg';
+        $imageFacebook   = config('app.url').'/images/logo-ogp.jpg';
         $twitterCardType = 'summary_large_image';
 
         empty($twitterCardType) ?: \Twitter::setType($twitterCardType);
