@@ -37,6 +37,13 @@
   .info {
     width: 45%;
     text-align: left;
+
+    .user-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 155px;
+    }
   }
    .desc{
     width: 25%;

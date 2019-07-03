@@ -11306,6 +11306,13 @@ img:hover {
   text-align: left;
 }
 
+.c-ranking-table-sp .info .user-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 155px;
+}
+
 .c-ranking-table-sp .desc {
   width: 25%;
 }
