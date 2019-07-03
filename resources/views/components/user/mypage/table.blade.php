@@ -10,10 +10,10 @@
       <th scope="row">お名前</th>
       <td>{{ $user->name }}</td>
     </tr>
-    <tr>
+    <!-- <tr>
       <th scope="row">メールアドレス</th>
       <td>{{ $user->email }}</td>
-    </tr>
+    </tr> -->
     <tr>
       <th scope="row">概要</th>
       <td>{{ $user->description }}</td>
