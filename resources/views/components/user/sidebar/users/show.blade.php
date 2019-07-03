@@ -7,7 +7,7 @@
     </a>
 
     <a
-      href="{{ route('mypage.favorited') }}"
+      href=""
       class="list-group-item list-group-item-action {{ isset($favorited) ? 'active-item' : '' }}">
       お気に入り(未実装)
     </a>

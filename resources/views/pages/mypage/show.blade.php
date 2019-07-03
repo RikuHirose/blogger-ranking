@@ -31,7 +31,7 @@
           </div>
         @endif
 
-        @include('components.user.users.table', ['user' => $currentUser])
+        @include('components.user.mypage.table', ['user' => $currentUser])
 
         <a href="{{ route('mypage.edit') }}" class="m-btn" btn-type="primary">
           修正する

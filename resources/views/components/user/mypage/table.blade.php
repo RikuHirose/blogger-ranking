@@ -11,6 +11,10 @@
       <td>{{ $user->name }}</td>
     </tr>
     <tr>
+      <th scope="row">メールアドレス</th>
+      <td>{{ $user->email }}</td>
+    </tr>
+    <tr>
       <th scope="row">概要</th>
       <td>{{ $user->description }}</td>
     </tr>
