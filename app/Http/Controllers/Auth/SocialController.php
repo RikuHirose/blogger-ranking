@@ -62,7 +62,7 @@ class SocialController extends Controller
 
         if(!$provider) {
 
-          try {
+          $user = \DB::transaction(function () use ($socialUser) {
             $user_image = Image::firstOrCreate(
                 [
                     'url' => $socialUser->avatar_original
@@ -80,10 +80,17 @@ class SocialController extends Controller
               );
 
             } else if ($providerName == 'twitter') {
+
+              if (empty($socialUser->getEmail())) {
+                $email = $socialUser->getName().'@fakeEmail.com';
+              } else {
+                $email = $socialUser->getEmail();
+              }
+
               $user = User::firstOrCreate(
                   [
                       'name'        => $socialUser->getName(),
-                      'email'       => $socialUser->getEmail(),
+                      'email'       => $email,
                       'image_id'    => $user_image->id,
                       'description' => $socialUser->user['description'],
                       'tw_url'      => \UrlHelper::getTwitterUrl($socialUser->getNickname()),
@@ -99,9 +106,9 @@ class SocialController extends Controller
                       'provider'    => $providerName
                 ]
             );
-          } catch (Exception $e) {
-            return redirect("/");
-          }
+
+            return $user;
+          });
 
 
         } else {
