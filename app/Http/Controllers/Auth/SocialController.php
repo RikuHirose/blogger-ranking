@@ -100,7 +100,7 @@ class SocialController extends Controller
                 ]
             );
           } catch (Exception $e) {
-
+            return redirect("/");
           }
 
 
