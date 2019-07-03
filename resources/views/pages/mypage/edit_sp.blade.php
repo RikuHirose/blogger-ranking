@@ -29,10 +29,11 @@
               <label>お名前</label>
               <input type="text" class="form-control" name="name" value="{{ $currentUser->name }}" required>
             </div>
-            <div class="m-frmTextbox">
+
+            <!-- <div class="m-frmTextbox">
               <label>メールアドレス</label>
               <input type="email" class="form-control" name="email" value="{{ $currentUser->email }}" required>
-            </div>
+            </div> -->
 
             <div class="m-frmTextbox">
               <label>概要</label>
