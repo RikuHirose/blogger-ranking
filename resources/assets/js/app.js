@@ -50,6 +50,11 @@ Vue.component('twitter-share', require('./components/twitterShare.vue').default)
 Vue.component('search-restaurants-select', require('./components/input/searchRestaurantsSelect.vue').default)
 Vue.component('search-restaurants-suggest', require('./components/input/searchRestaurantsSuggest.vue').default)
 /* ============================================================================
+ * select
+ * ========================================================================= */
+Vue.component('user-sort-select', require('./components/select/userSortSelect.vue').default)
+
+/* ============================================================================
  * modal
  * ========================================================================= */
 

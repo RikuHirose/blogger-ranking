@@ -56,4 +56,9 @@ class User extends Authenticatable
         return $this->belongsTo(\App\Models\SocialProvider::class, 'id', 'user_id');
     }
 
+    public function userCategories()
+    {
+        return $this->hasMany(\App\Models\UserCategory::class, 'user_id', 'id');
+    }
+
 }

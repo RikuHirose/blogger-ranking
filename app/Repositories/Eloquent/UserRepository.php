@@ -43,4 +43,20 @@ class UserRepository implements UserRepositoryInterface
         return $this->getBlankModel()->orderBy('last_mounth_sales', $order)->take(3)->get();
     }
 
+    public function getBySalesOrderByCategory($order = "asc", $category_id)
+    {
+        return $this->getBlankModel()
+                ->whereHas('userCategories.category', function ($q) use ($category_id) {
+                    $q->where('id', $category_id);
+                })->orderBy('last_mounth_sales', $order)->get();
+    }
+
+    public function getBySalesTop3OrderByCategory($order = "asc", $category_id)
+    {
+        return $this->getBlankModel()
+        ->whereHas('userCategories.category', function ($q) use ($category_id) {
+            $q->where('id', $category_id);
+        })->orderBy('last_mounth_sales', $order)->take(3)->get();
+    }
+
 }
