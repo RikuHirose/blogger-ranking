@@ -11258,11 +11258,12 @@ img:hover {
 
 .c-ranking-table .image,
 .c-ranking-table .name {
-  width: 10%;
+  width: 20%;
 }
 
 .c-ranking-table .name {
   text-align: left;
+  padding-left: 8px;
 }
 
 .c-ranking-table .info,
