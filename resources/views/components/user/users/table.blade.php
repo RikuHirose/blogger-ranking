@@ -35,6 +35,14 @@
       </td>
     </tr>
     <tr>
+      <th scope="row">ブログのカテゴリ</th>
+      <td>
+        @foreach($user->userCategories as $userCategory)
+          <span class="m-tag">{{ $userCategory->category->name }}</span>
+        @endforeach
+      </td>
+    </tr>
+    <tr>
       <th scope="row">
         <i class="fa-twitter"></i>
         Twitter

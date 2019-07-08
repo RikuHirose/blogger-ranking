@@ -13,12 +13,13 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('users', UserController::class);
-    // $router->resource('restaurants', RestaurantController::class);
-    // $router->resource('categories', CategoryController::class);
-    // $router->resource('situations', SituationController::class);
+    $router->resource('categories', CategoryController::class);
     $router->resource('images', ImageController::class);
+    $router->resource('usercategories', UserCategoryController::class);
+    $router->resource('socialProviders', SocialProviderController::class);
+    // $router->resource('restaurants', RestaurantController::class);
+    // $router->resource('situations', SituationController::class);
     // $router->resource('restaurantImages', RestaurantImageController::class);
     // $router->resource('favorites', FavoriteController::class);
-    $router->resource('socialProviders', SocialProviderController::class);
 
 });

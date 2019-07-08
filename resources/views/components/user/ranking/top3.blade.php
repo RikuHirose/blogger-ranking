@@ -10,6 +10,9 @@
             <i class="fa-crown" ranking="2"></i>
             {{ $users[1]->name }}
           </p>
+          <p class="user-box__info__category">
+            @include('components.user.category.2categories', ['userCategories' => $users[1]->userCategories])
+          </p>
           <p class="user-box__info__desc">
             {{ $users[1]->last_mounth_sales }} 円
             /
@@ -28,7 +31,11 @@
           <div class="user-box__info">
             <p class="user-box__info__name">
               <i class="fa-crown" ranking="1"></i>
-              {{ $users[0]->name }}</p>
+              {{ $users[0]->name }}
+            </p>
+            <p class="user-box__info__category">
+              @include('components.user.category.2categories', ['userCategories' => $users[0]->userCategories])
+            </p>
             <p class="user-box__info__desc">
               {{ $users[0]->last_mounth_sales }} 円
               /
@@ -48,6 +55,9 @@
           <p class="user-box__info__name">
             <i class="fa-crown" ranking="3"></i>
             {{ $users[2]->name }}
+          </p>
+          <p class="user-box__info__category">
+            @include('components.user.category.2categories', ['userCategories' => $users[2]->userCategories])
           </p>
           <p class="user-box__info__desc">
             {{ $users[2]->last_mounth_sales }} 円

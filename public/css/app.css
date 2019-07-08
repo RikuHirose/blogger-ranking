@@ -11212,6 +11212,10 @@ img:hover {
   margin-bottom: 8px;
 }
 
+.c-ranking-top3 .user-box__info__category {
+  margin-bottom: 8px;
+}
+
 .c-ranking-top3 .user-box__info__desc {
   color: rgba(0, 0, 0, 0.5);
   font-size: 16px;
@@ -11254,7 +11258,11 @@ img:hover {
 
 .c-ranking-table .image,
 .c-ranking-table .name {
-  width: 20%;
+  width: 10%;
+}
+
+.c-ranking-table .name {
+  text-align: left;
 }
 
 .c-ranking-table .info,
@@ -11304,6 +11312,7 @@ img:hover {
 .c-ranking-table-sp .info {
   width: 45%;
   text-align: left;
+  padding-left: 8px;
 }
 
 .c-ranking-table-sp .info .user-name {
@@ -12210,7 +12219,7 @@ a.m-btn {
  * ------------------------------------------------------------------------- */
 
 .m-tag {
-  margin-left: 8px;
+  margin-right: 8px;
   display: inline-block;
   font-family: NotoSansCJKjp;
   font-size: 10px;
@@ -12308,6 +12317,29 @@ a.m-btn {
 
 .bm-overlay {
   background: none !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * select
+ * ------------------------------------------------------------------------- */
+
+.m-select {
+  background: url(/images/icon_arrow_down.svg) no-repeat right 16px center/12px auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #666;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+  cursor: pointer;
+  text-align: center;
+  min-width: 152px;
+  padding: 4px 8px;
+  margin-left: 8px;
+  background-color: #fff;
 }
 
 /* ============================================================================

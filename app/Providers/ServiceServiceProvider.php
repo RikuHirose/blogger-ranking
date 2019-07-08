@@ -30,5 +30,10 @@ class ServiceServiceProvider extends ServiceProvider
             \App\Services\RestaurantServiceInterface::class,
             \App\Services\Production\RestaurantService::class
         );
+
+        $this->app->singleton(
+            \App\Services\RankingServiceInterface::class,
+            \App\Services\Production\RankingService::class
+        );
     }
 }

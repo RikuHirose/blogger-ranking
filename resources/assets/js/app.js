@@ -15,6 +15,8 @@ import mobile from 'is-mobile'
 // require swiper styles
 import 'swiper/dist/css/swiper.css'
 import SocialSharing from 'vue-social-sharing'
+import vSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css'
 
 Vue.prototype.$axios = window.axios
 
@@ -22,6 +24,7 @@ Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 Vue.use(vueSmoothScroll)
 Vue.use(Sticky)
 Vue.use(SocialSharing)
+Vue.component('v-select', vSelect)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -50,9 +53,18 @@ Vue.component('twitter-share', require('./components/twitterShare.vue').default)
 Vue.component('search-restaurants-select', require('./components/input/searchRestaurantsSelect.vue').default)
 Vue.component('search-restaurants-suggest', require('./components/input/searchRestaurantsSuggest.vue').default)
 /* ============================================================================
+ * select
+ * ========================================================================= */
+Vue.component('user-sort-select', require('./components/select/userSortSelect.vue').default)
+
+/* ============================================================================
  * modal
  * ========================================================================= */
 
+/* ============================================================================
+ * form
+ * ========================================================================= */
+Vue.component('user-edit-form', require('./components/form/userEditForm.vue').default)
 /* ============================================================================
  * button
  * ========================================================================= */

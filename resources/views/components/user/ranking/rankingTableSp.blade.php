@@ -16,6 +16,9 @@
               {{ $user->name }}
             </p>
             <p>
+              @include('components.user.category.2categories', ['userCategories' => $user->userCategories])
+            </p>
+            <p>
               {{ $user->last_mounth_sales }} 円
               /
               {{ $user->last_mounth_pv }} pv
@@ -45,7 +48,12 @@
             <img class="rounded-circle" src="{{ $user->image->url }}" alt="" width="48px" height="48px">
           </td>
           <td class="info">
-            <p class="user-name">{{ $user->name }}</p>
+            <p class="user-name">
+              {{ $user->name }}
+            </p>
+            <p>
+              @include('components.user.category.2categories', ['userCategories' => $user->userCategories])
+            </p>
             <p>
               {{ $user->last_mounth_sales }} 円
               /

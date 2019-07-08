@@ -32,8 +32,13 @@
     width: 10%;
   }
   .image, .name{
-    width: 20%;
+    width: 10%;
   }
+
+  .name {
+    text-align: left;
+  }
+
   .info, .desc{
     width: 25%;
   }

@@ -15,11 +15,32 @@
       <div class="social-content">
         <form @submit.prevent="submitForm">
           <div class="m-frmTextbox">
+            <label>ブログのカテゴリ<span class="small">(複数選択可)</span></label>
+          </div>
+          <v-select
+            v-model="userForm.categories"
+            style="margin-bottom: 8px;"
+            multiple
+            placeholder="ブログのカテゴリを選択する"
+            :options="categories"
+            label="name"
+            track-by="id">
+            <template #search="{attributes, events}">
+              <input
+                class="vs__search"
+                :required="!userForm.categories.length"
+                v-bind="attributes"
+                v-on="events">
+            </template>
+          </v-select>
+          <div class="m-frmTextbox">
             <label>{{ lastMounth }}の売り上げ</label>
             <input
               v-model="userForm.last_mounth_sales"
               type="number"
               class="form-control"
+              min="0"
+              max="100000000"
               required>円
           </div>
           <div class="m-frmTextbox">
@@ -28,6 +49,8 @@
               v-model="userForm.last_mounth_pv"
               type="number"
               class="form-control"
+              min="0"
+              max="100000000"
               required>pv
           </div>
           <div class="m-frmTextbox">
@@ -61,13 +84,15 @@ export default {
   props: {
     title: {required: true, type: String},
     lastMounth: {required: true, type: String},
+    categories: {required: true, type: Array},
   },
   data (){
     return {
       userForm: {
         last_mounth_sales: 0,
         last_mounth_pv: 0,
-        blog_url: ''
+        blog_url: '',
+        categories: [],
       },
       errors: []
     }
@@ -82,13 +107,15 @@ export default {
       formData.append('last_mounth_pv', parseInt(this.userForm.last_mounth_pv))
       formData.append('blog_url', this.userForm.blog_url)
       formData.append('first_login', 0)
+      this.userForm.categories.map(category => formData.append('categories[]', category.id))
+
       this.$axios
         .post('/mypage/update', formData)
         .then(() => {
           window.location.href = '/'
         })
         .catch((err) => {
-          alert(err)
+          console.log(err)
         })
     }
   }

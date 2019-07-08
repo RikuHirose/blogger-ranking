@@ -38,6 +38,12 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Eloquent\CategoryRepository::class
         );
 
+        // UserCategory
+        $this->app->bind(
+            \App\Repositories\UserCategoryRepositoryInterface::class,
+            \App\Repositories\Eloquent\UserCategoryRepository::class
+        );
+
         // Restaurants
         $this->app->bind(
             \App\Repositories\RestaurantRepositoryInterface::class,
@@ -50,7 +56,8 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Eloquent\FavoriteRepository::class
         );
 
-        // Favorites
+
+        // Situation
         $this->app->bind(
             \App\Repositories\SituationRepositoryInterface::class,
             \App\Repositories\Eloquent\SituationRepository::class
