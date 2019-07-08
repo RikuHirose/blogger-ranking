@@ -17,8 +17,18 @@
         @isset($message)
           {{ $message }}
         @endisset
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
-        <script type="application/javascript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="text-right">
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+          <script type="application/javascript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="text-right mt-3">
+          <user-sort-select
+            :url-full="{{ json_encode(url()->full()) }}"
+            :domain="{{ json_encode(url('/')) }}"
+            :categories="{{ json_encode($categories) }}"
+            ></user-sort-select>
+          </div>
 
         @if(!is_null($top3Users) || !is_null($subordinateUsers))
           @include('components.user.ranking.rankingTableSp', ['users' => $subordinateUsers, 'top3Users' => $top3Users])

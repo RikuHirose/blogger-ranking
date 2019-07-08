@@ -43,7 +43,8 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user->load('image');
+        $user->load('image', 'userCategories.category');
+
         $rank = DB::table('users as a')
             ->select(
                 'id',

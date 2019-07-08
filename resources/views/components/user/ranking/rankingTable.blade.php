@@ -4,15 +4,18 @@
 
       <tr>
         <td class="rank">
-          <?php
+          @php
             $rank = $loop->iteration + 3;
-          ?>
+          @endphp
           {{ $rank }}
         </td>
         <td class="image">
           <img class="rounded-circle" src="{{ $user->image->url }}" alt="" width="48px" height="48px">
         </td>
-        <td class="name">{{ $user->name }}</td>
+        <td class="name">
+          <span>{{ $user->name }}</span>
+          @include('components.user.category.2categories', ['userCategories' => $user->userCategories])
+        </td>
         <td class="info">
           {{ $user->last_mounth_sales }} 円
           /

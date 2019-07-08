@@ -35,6 +35,18 @@ class CategoryController extends Controller
         $this->categoryRepository   = $categoryRepository;
     }
 
+    public function index()
+    {
+
+        $categories = $this->categoryRepository->all();
+
+        if (empty($categories)) {
+            return redirect()->back()->withErrors(trans('admin.errors.general.save_failed'));
+        }
+
+        return response()->json(['categories' => $categories]);
+    }
+
     public function popular(CategoryRequest $request)
     {
         $input = $request->only($this->categoryRepository->getBlankModel()->getFillable());

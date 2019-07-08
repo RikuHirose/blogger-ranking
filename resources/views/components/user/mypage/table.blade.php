@@ -38,6 +38,16 @@
         <a href="{{ $user->blog_url }}" target="_blank">{{ $user->blog_url }}</a>
       </td>
     </tr>
+
+    <tr>
+      <th scope="row">ブログのカテゴリ</th>
+      <td>
+        @foreach($currentUser->userCategories as $userCategory)
+          <span class="m-tag">{{ $userCategory->category->name }}</span>
+        @endforeach
+      </td>
+    </tr>
+
     <tr>
       <th scope="row">
         <i class="fa-twitter"></i>

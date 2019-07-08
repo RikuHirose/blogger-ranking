@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(RestaurantImagesTableSeeder::class);
         // admin
         // $this->call(AdminSeeder::class);
+        $this->call(AdminSeeder2::class);
     }
 }

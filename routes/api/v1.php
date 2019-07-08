@@ -21,6 +21,7 @@ Route::group(['prefix' => 'api', 'as' => 'api.', 'namespace' => 'Api'], function
 
       Route::group(['prefix' => 'categories', 'as' => 'categories.'],
         function () {
+          Route::get('/', 'CategoryController@index')->name('index');
           Route::post('/popular', 'CategoryController@popular')->name('popular');
           Route::post('/suggest', 'CategoryController@suggest')->name('suggest');
       });

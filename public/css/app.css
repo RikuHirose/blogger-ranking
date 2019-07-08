@@ -11212,6 +11212,10 @@ img:hover {
   margin-bottom: 8px;
 }
 
+.c-ranking-top3 .user-box__info__category {
+  margin-bottom: 8px;
+}
+
 .c-ranking-top3 .user-box__info__desc {
   color: rgba(0, 0, 0, 0.5);
   font-size: 16px;
@@ -11254,7 +11258,11 @@ img:hover {
 
 .c-ranking-table .image,
 .c-ranking-table .name {
-  width: 20%;
+  width: 10%;
+}
+
+.c-ranking-table .name {
+  text-align: left;
 }
 
 .c-ranking-table .info,
@@ -11304,6 +11312,7 @@ img:hover {
 .c-ranking-table-sp .info {
   width: 45%;
   text-align: left;
+  padding-left: 8px;
 }
 
 .c-ranking-table-sp .info .user-name {
@@ -12210,7 +12219,7 @@ a.m-btn {
  * ------------------------------------------------------------------------- */
 
 .m-tag {
-  margin-left: 8px;
+  margin-right: 8px;
   display: inline-block;
   font-family: NotoSansCJKjp;
   font-size: 10px;

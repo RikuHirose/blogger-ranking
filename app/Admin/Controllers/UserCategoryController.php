@@ -2,20 +2,20 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Category;
+use App\Models\UserCategory;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class CategoryController extends AdminController
+class UserCategoryController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = 'App\Models\Category';
+    protected $title = 'App\Models\UserCategory';
 
     /**
      * Make a grid builder.
@@ -24,11 +24,11 @@ class CategoryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Category);
+        $grid = new Grid(new UserCategory);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('description', __('Description'));
+        $grid->column('user_id', __('User id'));
+        $grid->column('category_id', __('Category id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -43,11 +43,11 @@ class CategoryController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Category::findOrFail($id));
+        $show = new Show(UserCategory::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('description', __('Description'));
+        $show->field('user_id', __('User id'));
+        $show->field('category_id', __('Category id'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -61,10 +61,10 @@ class CategoryController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new Category);
+        $form = new Form(new UserCategory);
 
-        $form->text('name', __('Name'));
-        $form->text('description', __('Description'));
+        $form->number('user_id', __('User id'));
+        $form->number('category_id', __('Category id'));
 
         return $form;
     }

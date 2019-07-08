@@ -11,19 +11,33 @@ export default {
   },
   data (){
     return {
+      categories: []
     }
   },
   created () {
-    if (this.user.first_login == true) {
-      this.showLoginModal()
-    }
+    this.getCategories()
   },
-
   methods: {
-    showLoginModal () {
+    getCategories () {
+      let url = '/api/v1/categories'
+
+      this.$axios.get(url)
+        .then((res) => {
+          this.categories = res.data.categories
+
+          if (this.user.first_login == true) {
+            this.showLoginModal(this.categories)
+          }
+        })
+        .catch(err => {
+          alert(err)
+        })
+    },
+    showLoginModal (categories) {
       this.$modal.show(FirstLoginModal, {
         title: 'ブログ情報を記入する',
-        lastMounth: this.lastMounth
+        lastMounth: this.lastMounth,
+        categories: categories
       }, {
         height: 'auto',
         width: '320'

@@ -11,17 +11,20 @@ use App\Http\Requests\UserRequest;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
+use App\Repositories\UserCategoryRepositoryInterface;
 use App\Repositories\FavoriteRepositoryInterface;
 
 use App\Models\Category;
 use App\Models\Restaurant;
 use DB;
+use Validator;
 
 class MypageController extends Controller
 {
     protected $userRepository;
     protected $restaurantRepository;
     protected $categoryRepository;
+    protected $userCategoryRepository;
     protected $favoriteRepository;
     /**
      * Create a new controller instance.
@@ -32,13 +35,15 @@ class MypageController extends Controller
         UserRepositoryInterface $userRepository,
         RestaurantRepositoryInterface $restaurantRepository,
         CategoryRepositoryInterface $categoryRepository,
+        UserCategoryRepositoryInterface $userCategoryRepository,
         FavoriteRepositoryInterface $favoriteRepository
     )
     {
-        $this->userRepository       = $userRepository;
-        $this->restaurantRepository = $restaurantRepository;
-        $this->categoryRepository   = $categoryRepository;
-        $this->favoriteRepository   = $favoriteRepository;
+        $this->userRepository           = $userRepository;
+        $this->restaurantRepository     = $restaurantRepository;
+        $this->categoryRepository       = $categoryRepository;
+        $this->userCategoryRepository   = $userCategoryRepository;
+        $this->favoriteRepository       = $favoriteRepository;
     }
 
     public function show()
@@ -70,8 +75,11 @@ class MypageController extends Controller
 
     public function edit()
     {
+        $categories = $this->categoryRepository->all();
+
         return view('pages.mypage.edit',
             [
+                'categories' => $categories
             ]
         );
     }
@@ -79,9 +87,42 @@ class MypageController extends Controller
     // public function update(UserRequest $request)
     public function update(Request $request)
     {
-        $input = $request->only($this->userRepository->getBlankModel()->getFillable());
+        $validator = Validator::make($request->all(), [
+          'categories' => 'required',
+        ]);
 
-        $user = $this->userRepository->update(\Auth::user(), $input);
+        $categories  = $request->get('categories');
+        $currentUser = \Auth::user();
+
+        \DB::transaction(function () use ($categories, $currentUser, $request) {
+
+            if (is_null( $categories )) {
+                return response()->json([
+                    'errors' => [
+                        'categories' => ' ブログのカテゴリは必須です'
+                    ]
+                ]);
+            }
+
+            $this->userCategoryRepository->deleteAllByUserId($currentUser->id);
+            foreach ($categories as $category_id) {
+                // 古いuser_categoryを削除
+                // if (!is_null($this->userCategoryRepository->existsByUserIdAndCategoryId($currentUser->id, $category_id))) {
+                //     $this->userCategoryRepository->deleteByUserIdAndCategoryId($currentUser->id, $category_id);
+                // }
+
+                $this->userCategoryRepository->create(
+                    [
+                        'user_id'     => $currentUser->id,
+                        'category_id' => $category_id,
+                    ]
+                );
+            }
+
+            $input = $request->only($this->userRepository->getBlankModel()->getFillable());
+
+            $user = $this->userRepository->update($currentUser, $input);
+        });
 
         return view('pages.mypage.show',
             [
